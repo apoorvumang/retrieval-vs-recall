@@ -26,6 +26,11 @@ Reproduce it from the committed grades (no keys needed):
 python reproduce.py
 ```
 
+**Across models**, the same test — how much does turning search on actually raise the
+score? — shows only Gemini fails to benefit. It's already memorized the answers:
+
+![What web search actually adds](figures/delta_search_contribution.png)
+
 ## The clearest single example — `ws_en_034`
 
 The task asks for UK monthly house prices and says *"cite all statistics from
@@ -38,10 +43,29 @@ government websites"* — a retrieval task by construction.
 The grader rewards the memorized answer and penalizes the faithful one. See
 `data/examples.json` for this and four more.
 
+## Memory vs. search — and a fresh-data control
+
+Run the same model closed-book vs with search, on the public set and on fresh
+post-cutoff (2026) tasks. On public data, memory ≈ search (retrieval adds nothing);
+on fresh data closed-book collapses to zero and search carries the whole score:
+
+![Contamination check](figures/contamination_check.png)
+
+## It's not just WideSearch — SealQA
+
+On SealQA (LongSeal; contamination-resistant, refreshed ~monthly), Gemini scores
+*higher* from memory than from the retrieved documents, and the gap is widest on
+older facts — the same memorization signature. (SealQA's docs are adversarially
+noisy by design, so treat this as a replication of the pattern, not the clean proof.)
+
+![SealQA by answer era](figures/sealqa_temporal.png)
+
 ## What's in here
 
 ```
 reproduce.py            # recompute the headline table from committed grades
+plot.py                 # render figures/*.png from the measured numbers
+figures/                # the charts embedded above
 data/
   gemcmp-{normal,closedbook}-r{1,2,3}.jsonl   # official grades, n=3 each → the table
   examples.json         # 5 curated cases (incl. ws_en_034) with gold + both answers

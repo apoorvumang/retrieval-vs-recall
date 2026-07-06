@@ -1,4 +1,5 @@
 # reproduce.py uses only the standard library.
+matplotlib>=3.7   # plot.py — render figures/*.png
 # The following are needed to regenerate grades / run the harness (BYO keys):
 openai>=1.40
 datasets>=2.19
