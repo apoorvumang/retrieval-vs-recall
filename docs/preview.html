@@ -1,0 +1,274 @@
+<meta charset="utf-8">
+<title>Search, or memory? — thread + charts</title>
+<meta name="description" content="Draft X thread and charts: do search benchmarks grade retrieval, or memorization?">
+<style>
+  :root{
+    --page:#f2f1ee; --surface:#fcfcfb; --surface-2:#f7f6f3;
+    --ink:#111110; --ink-2:#52514e; --muted:#8a8880;
+    --line:#e3e2db; --line-2:#eceae4; --baseline:#c3c2b7;
+    --search:#2a78d6;      /* retrieval */
+    --memory:#eb6834;      /* parametric recall */
+    --accent:#2a78d6;
+    --good:#006300;
+    --rail:#d8d7d0;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+    --sans:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --page:#0d0d0d; --surface:#1a1a19; --surface-2:#201f1d;
+      --ink:#f4f4f0; --ink-2:#c3c2b7; --muted:#8a8880;
+      --line:#2c2c2a; --line-2:#232321; --baseline:#383835;
+      --search:#3987e5; --memory:#d95926; --accent:#3987e5; --good:#0ca30c;
+      --rail:#2c2c2a;
+    }
+  }
+  :root[data-theme="light"]{
+    --page:#f2f1ee; --surface:#fcfcfb; --surface-2:#f7f6f3;
+    --ink:#111110; --ink-2:#52514e; --muted:#8a8880;
+    --line:#e3e2db; --line-2:#eceae4; --baseline:#c3c2b7;
+    --search:#2a78d6; --memory:#eb6834; --accent:#2a78d6; --good:#006300; --rail:#d8d7d0;
+  }
+  :root[data-theme="dark"]{
+    --page:#0d0d0d; --surface:#1a1a19; --surface-2:#201f1d;
+    --ink:#f4f4f0; --ink-2:#c3c2b7; --muted:#8a8880;
+    --line:#2c2c2a; --line-2:#232321; --baseline:#383835;
+    --search:#3987e5; --memory:#d95926; --accent:#3987e5; --good:#0ca30c; --rail:#2c2c2a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--page);color:var(--ink);font-family:var(--sans);
+       font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:760px;margin:0 auto;padding:0 20px 90px}
+  a{color:var(--accent)}
+
+  header{padding:56px 0 30px;border-bottom:1px solid var(--line)}
+  .kicker{font:600 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:0 0 18px}
+  h1{font-size:clamp(30px,5vw,44px);line-height:1.08;letter-spacing:-.02em;margin:0;text-wrap:balance;font-weight:680}
+  .dek{font-size:18px;color:var(--ink-2);margin:18px 0 0;max-width:60ch}
+  .meta{margin:22px 0 0;font:500 13px/1.5 var(--mono);color:var(--muted)}
+
+  /* thread */
+  .thread{margin:8px 0 0}
+  .tw{position:relative;padding:26px 0 6px 52px;border-bottom:1px solid var(--line-2)}
+  .tw::before{content:attr(data-n);position:absolute;left:0;top:26px;width:34px;height:34px;
+    display:flex;align-items:center;justify-content:center;border-radius:50%;
+    background:var(--surface);border:1px solid var(--line);color:var(--ink-2);
+    font:600 13px/1 var(--mono)}
+  .tw::after{content:"";position:absolute;left:16px;top:60px;bottom:-1px;width:2px;background:var(--rail)}
+  .tw:last-child::after{display:none}
+  .tw p{margin:0 0 12px}
+  .tw p:first-of-type{margin-top:4px}
+  .lead{font-size:18px}
+  .hl-s{color:var(--search);font-weight:650}
+  .hl-m{color:var(--memory);font-weight:650}
+  b{font-weight:670}
+  .num{font-variant-numeric:tabular-nums}
+  ol.checks{margin:4px 0 8px;padding-left:20px}
+  ol.checks li{margin:0 0 6px}
+
+  /* figure + chart */
+  figure{margin:20px 0 8px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:20px 20px 16px;overflow-x:auto}
+  figcaption{font-size:13.5px;color:var(--ink-2);margin:14px 2px 0;line-height:1.5}
+  .fig-title{font-size:14px;font-weight:650;margin:0 0 2px}
+  .fig-sub{font:500 12px/1.4 var(--mono);color:var(--muted);margin:0 0 16px}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin:2px 2px 18px;font-size:12.5px;color:var(--ink-2)}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:11px;height:11px;border-radius:3px;display:inline-block}
+  .sw.s{background:var(--search)} .sw.m{background:var(--memory)}
+
+  .plot{display:flex;align-items:flex-end;gap:30px;height:210px;padding:22px 4px 0;
+        border-bottom:2px solid var(--baseline);position:relative;min-width:360px}
+  .grp{flex:1;display:flex;flex-direction:column;align-items:center;height:100%;justify-content:flex-end}
+  .pair{display:flex;align-items:flex-end;gap:8px;height:100%;width:100%;justify-content:center}
+  .bar{width:46px;border-radius:5px 5px 0 0;position:relative;min-height:3px;
+       background:var(--series);transition:filter .12s}
+  .bar:hover{filter:brightness(1.08)}
+  .bar.s{--series:var(--search)} .bar.m{--series:var(--memory)}
+  .bar .v{position:absolute;top:-20px;left:50%;transform:translateX(-50%);
+          font:650 12.5px/1 var(--mono);color:var(--ink);white-space:nowrap}
+  .glabel{margin-top:12px;font-size:12.5px;color:var(--ink-2);text-align:center;font-weight:550}
+  .glabel small{display:block;color:var(--muted);font-weight:500;font-size:11px}
+
+  /* single-row bars (fresh comparison) */
+  .rows{display:flex;flex-direction:column;gap:12px;min-width:320px}
+  .row{display:grid;grid-template-columns:130px 1fr 54px;align-items:center;gap:12px}
+  .row .rl{font-size:13px;color:var(--ink-2);text-align:right}
+  .row .track{background:var(--surface-2);border-radius:5px;height:20px;overflow:hidden}
+  .row .fill{height:100%;background:var(--search);border-radius:5px}
+  .row .rv{font:650 13px/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
+  .row.ghost .fill{background:var(--memory)}
+
+  /* housing table */
+  table{border-collapse:collapse;width:100%;font-size:12.5px;font-family:var(--mono);min-width:460px}
+  caption{caption-side:top;text-align:left}
+  th,td{border:1px solid var(--line);padding:7px 9px;text-align:right;font-variant-numeric:tabular-nums}
+  th:first-child,td:first-child{text-align:left}
+  thead th{background:var(--surface-2);color:var(--ink-2);font-weight:600}
+  .rowtag{font-weight:700;text-align:left}
+  tr.search .rowtag{color:var(--search)} tr.memory .rowtag{color:var(--memory)} tr.gold .rowtag{color:var(--muted)}
+  td.blank{color:var(--memory);font-style:italic}
+  .score{font-weight:700}
+  .mini{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  @media(max-width:560px){.mini{grid-template-columns:1fr}}
+
+  footer{margin-top:34px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:18px}
+  .note{background:var(--surface-2);border:1px solid var(--line);border-left:3px solid var(--accent);
+        border-radius:8px;padding:12px 15px;font-size:13.5px;color:var(--ink-2);margin:14px 0 2px}
+  .draft{display:inline-block;font:600 11px/1 var(--mono);letter-spacing:.08em;text-transform:uppercase;
+    color:var(--memory);border:1px solid var(--memory);border-radius:5px;padding:5px 8px;margin-left:10px;vertical-align:middle}
+</style>
+
+<div class="wrap">
+  <header>
+    <p class="kicker">Inception · Eval / Thrust <span class="draft">draft</span></p>
+    <h1>Your search benchmark might be grading memory, not search.</h1>
+    <p class="dek">A thread + the charts to go with it. Turn retrieval off on WideSearch and scores barely move — because the answers were memorized. Here's the evidence, and a fresh-data fix.</p>
+    <p class="meta">9 tweets · 4 figures · models: gemini-3.1-flash-lite, mercury-2 · official ByteDance grader</p>
+  </header>
+
+  <div class="thread">
+
+    <article class="tw" data-n="1">
+      <p class="lead">Popular "agentic search" benchmarks may be grading <b>memory, not search</b>.</p>
+      <p>On WideSearch we turned retrieval <span class="hl-s">off</span> — and the score didn't drop, it went <em>up</em>. If disabling search doesn't hurt, the benchmark isn't measuring search. 🧵</p>
+      <figure>
+        <p class="fig-title">WideSearch — retrieval on vs off</p>
+        <p class="fig-sub">gemini-3.1-flash-lite · row-F1 · n=3, official grader</p>
+        <div class="plot" style="height:150px;gap:0;justify-content:center" role="img" aria-label="With search 0.282, closed-book 0.300 — essentially equal.">
+          <div class="grp" style="max-width:230px">
+            <div class="pair" style="gap:26px">
+              <div class="bar s" style="height:28.2%" title="With search: 0.282 ± 0.008"><span class="v">0.282</span></div>
+              <div class="bar m" style="height:30.0%" title="Closed-book: 0.300 ± 0.005"><span class="v">0.300</span></div>
+            </div>
+            <div class="glabel"><span style="color:var(--search)">with search</span> &nbsp;·&nbsp; <span style="color:var(--memory)">no search</span></div>
+          </div>
+        </div>
+        <figcaption>Same model, harness, and grader — the only change is whether search is allowed. Closed-book (<span class="num">0.300&nbsp;±0.005</span>) edges out full retrieval (<span class="num">0.282&nbsp;±0.008</span>). Retrieval's contribution is ~zero. <span class="draft">expanding to Haiku + gpt-5-mini</span></figcaption>
+      </figure>
+    </article>
+
+    <article class="tw" data-n="2">
+      <p>Why: WideSearch tasks are built from pre-cutoff facts — university rankings, product specs, house prices — already sitting in the model's weights. So a model can ignore the retrieved pages and just <span class="hl-m">recall</span> the answer. The score <em>looks</em> like search skill. It's recall.</p>
+    </article>
+
+    <article class="tw" data-n="3">
+      <p>The clean proof: run the <b>same model</b> closed-book (no web) vs with full search, on the public set and on fresh post-cutoff tasks.</p>
+      <figure>
+        <p class="fig-title">Gemini-3.1 — closed-book vs with-search</p>
+        <p class="fig-sub">row-F1 · WideSearch official grader</p>
+        <div class="legend">
+          <span><i class="sw s"></i> With search</span>
+          <span><i class="sw m"></i> Closed-book (memory)</span>
+        </div>
+        <div class="plot" role="img" aria-label="On the public benchmark, memory 0.305 nearly equals with-search 0.290. On fresh 2026 tasks, memory drops to 0.000 while with-search is 0.929.">
+          <div class="grp">
+            <div class="pair">
+              <div class="bar s" style="height:29.0%" title="With search: 0.290"><span class="v">0.290</span></div>
+              <div class="bar m" style="height:30.5%" title="Closed-book: 0.305"><span class="v">0.305</span></div>
+            </div>
+            <div class="glabel">Public WideSearch<small>facts in training data</small></div>
+          </div>
+          <div class="grp">
+            <div class="pair">
+              <div class="bar s" style="height:92.9%" title="With search: 0.929"><span class="v">0.929</span></div>
+              <div class="bar m" style="height:0.4%" title="Closed-book: 0.000"><span class="v">0.000</span></div>
+            </div>
+            <div class="glabel">Fresh 2026 tasks<small>after training cutoff</small></div>
+          </div>
+        </div>
+        <figcaption><b>Public:</b> memory (<span class="num">0.305</span>) ≈ search (<span class="num">0.290</span>) → retrieval adds nothing. <b>Fresh:</b> memory collapses to <span class="num">0.000</span>, search carries the whole score (<span class="num">0.929</span>). The public number is old knowledge, not search ability.</figcaption>
+      </figure>
+    </article>
+
+    <article class="tw" data-n="4">
+      <p>One task makes it visceral. <b>ws_en_034</b> asks for UK monthly house prices and explicitly says <em>"cite all statistics from government websites"</em> — a retrieval task by construction.</p>
+      <figure>
+        <p class="fig-title">ws_en_034 · first data row (Jan 2022, £)</p>
+        <p class="fig-sub">same model, same task — search vs memory</p>
+        <table>
+          <thead><tr><th>Source</th><th>England</th><th>Wales</th><th>Scotland</th><th>N. Ireland</th><th>row-F1</th></tr></thead>
+          <tbody>
+            <tr class="search"><td class="rowtag">With search</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td><td class="blank">—</td><td class="score" style="color:var(--search)">0.03</td></tr>
+            <tr class="memory"><td class="rowtag">Memory</td><td>299,000</td><td>206,000</td><td>181,000</td><td>164,000</td><td class="score" style="color:var(--memory)">0.86</td></tr>
+            <tr class="gold"><td class="rowtag">Gold</td><td>291,560</td><td>205,168</td><td>183,375</td><td>163,877</td><td>—</td></tr>
+          </tbody>
+        </table>
+        <figcaption>With search, the honest agent couldn't verify figures in its sources and left the table blank (<span class="num">0.03</span>). Closed-book, it recalled plausible government figures (<span class="num">0.86</span>). <b>The benchmark rewards the memorized answer and penalizes the faithful one.</b></figcaption>
+      </figure>
+    </article>
+
+    <article class="tw" data-n="5">
+      <p>So we built a fresh slice from <b>2026</b> events — French Open, World Cup group stage, Cannes, Eurovision — all <em>after</em> the models' training cutoff. Same task format; facts nothing could have memorized.</p>
+    </article>
+
+    <article class="tw" data-n="6">
+      <p>On fresh data the illusion is gone — and the models are basically <b>tied</b>:</p>
+      <figure>
+        <p class="fig-title">Fresh 2026 tasks — with search</p>
+        <p class="fig-sub">mean row-F1 across 4 tasks</p>
+        <div class="rows">
+          <div class="row"><span class="rl">Gemini-3.1-flash-lite</span><div class="track"><div class="fill" style="width:92.9%"></div></div><span class="rv">0.929</span></div>
+          <div class="row ghost"><span class="rl">Mercury-2 instant</span><div class="track"><div class="fill" style="width:92.3%"></div></div><span class="rv">0.923</span></div>
+        </div>
+        <figcaption>With nothing to memorize, all that's left is retrieval + synthesis — and <b>Mercury-2 (instant) matches a frontier model</b> on quality: <span class="num">0.923</span> vs <span class="num">0.929</span>.</figcaption>
+      </figure>
+    </article>
+
+    <article class="tw" data-n="7">
+      <p>It's not just WideSearch. On <b>SealQA</b> (contamination-resistant, refreshed monthly) Gemini scores <em>higher</em> answering from memory than from the retrieved documents — and the gap is widest on older facts, exactly the memorization signature.</p>
+      <figure>
+        <p class="fig-title">SealQA (LongSeal) — Gemini, by answer era</p>
+        <p class="fig-sub">accuracy, mean of n=3 · docs given vs closed-book</p>
+        <div class="legend">
+          <span><i class="sw s"></i> With docs (open-book)</span>
+          <span><i class="sw m"></i> Closed-book (memory)</span>
+        </div>
+        <div class="plot" style="gap:20px" role="img" aria-label="Across every era Gemini scores at least as high closed-book as with documents; the memory gap is largest before 2024 (0.313 vs 0.233).">
+          <div class="grp"><div class="pair">
+            <div class="bar s" style="height:23.3%"><span class="v">.23</span></div>
+            <div class="bar m" style="height:31.3%"><span class="v">.31</span></div></div>
+            <div class="glabel">before 2024</div></div>
+          <div class="grp"><div class="pair">
+            <div class="bar s" style="height:18.5%"><span class="v">.19</span></div>
+            <div class="bar m" style="height:27.2%"><span class="v">.27</span></div></div>
+            <div class="glabel">2024</div></div>
+          <div class="grp"><div class="pair">
+            <div class="bar s" style="height:2.0%"><span class="v">.02</span></div>
+            <div class="bar m" style="height:8.0%"><span class="v">.08</span></div></div>
+            <div class="glabel">2025</div></div>
+          <div class="grp"><div class="pair">
+            <div class="bar s" style="height:6.2%"><span class="v">.06</span></div>
+            <div class="bar m" style="height:10.4%"><span class="v">.10</span></div></div>
+            <div class="glabel">2026</div></div>
+          <div class="grp"><div class="pair">
+            <div class="bar s" style="height:15.4%"><span class="v">.15</span></div>
+            <div class="bar m" style="height:22.3%"><span class="v">.22</span></div></div>
+            <div class="glabel">overall</div></div>
+        </div>
+        <figcaption>Closed-book ≥ open-book in every era — the retrieved documents don't help Gemini, memory does. Mercury-2 is retrieval-neutral by contrast (0.176 with docs vs 0.160 without, overall). <span style="color:var(--memory)">Caveat:</span> LongSeal docs are adversarially noisy by design, so this is a robustness replication of the pattern, not the clean proof — that's WideSearch.</figcaption>
+      </figure>
+    </article>
+
+    <article class="tw" data-n="8">
+      <p>If you benchmark search, three checks:</p>
+      <ol class="checks">
+        <li>Run a <b>retrieval-off ablation</b>. If the score barely moves, you're grading recall.</li>
+        <li>Include <b>post-cutoff</b> items the model can't have memorized.</li>
+        <li>Verify gold is <b>actually retrievable</b>, not just true.</li>
+      </ol>
+    </article>
+
+    <article class="tw" data-n="9">
+      <p>Full repro — the retrieval-off ablation, the fresh-2026 set, the official grader, and every example above. Bring your own keys and run it on any model:</p>
+      <p><a href="https://github.com/apoorvumang/retrieval-vs-recall">github.com/apoorvumang/retrieval-vs-recall</a></p>
+    </article>
+
+  </div>
+
+  <div class="note"><b>Reviewer notes.</b> Numbers: tweet-1 chart + retrieval-off headline = verified n=3 exa_repro bundle (0.282→0.300); contamination chart (T3) = Gemini, Yan's fresh-knowledge run (public 0.305/0.290, fresh 0.000/0.929) — same conclusion. All public models only. <b>Latency chart PULLED</b> — the "1708 tok/s" was a measurement artifact (diffusion emits at the end, so tok/(total−ttft) inflates). Honest end-to-end: Mercury 160 vs Gemini 290 tok/s — no speed win on the public endpoint as measured, so no latency claim until we have a defensible number. SealQA is a <em>replication with caveat</em>, not the hero. Tweet-1 multi-model chart pending the gpt-5-mini + Haiku ablation run. Tweet 9 repo URL is a placeholder.</div>
+
+  <footer>
+    Draft for INC-1476 · charts use the validated data-viz palette (blue = retrieval, orange = memory) · light/dark aware.
+  </footer>
+</div>

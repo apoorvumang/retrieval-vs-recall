@@ -1,0 +1,1966 @@
+{
+ "ws_en_034": {
+  "instance_id": "ws_en_034",
+  "blurb": "UK monthly house prices 2022-2025 (task says 'cite from govt websites') — search leaves the table blank; memory recalls ~correct figures. [default]",
+  "query": "Please track and compile the average monthly house prices for England, Scotland, Wales and Northern Ireland, for the period from January 2022 to April 2025 (including January 2022 and April 2025). Please cite all the statistics from government websites.\n\nPlease output the compiled data in one Markdown table format. The column names in the table should be, in order: Month, House Price in England (Pounds), House Price in Wales (Pounds), House Price in Scotland (Pounds), House Price in Northern Ireland (Pounds)\nFor the column 'Month', list the month in the format 2022/01, 2022/02.\n\nDon't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown\n{data_content}\n```",
+  "required_columns": [
+   "month",
+   "housepriceinengland(pounds)",
+   "housepriceinwales(pounds)",
+   "housepriceinscotland(pounds)",
+   "housepriceinnorthernireland(pounds)"
+  ],
+  "gold_rows": [
+   {
+    "month": "2022/01",
+    "housepriceinengland(pounds)": "291,560",
+    "housepriceinwales(pounds)": "205,168",
+    "housepriceinscotland(pounds)": "183,375",
+    "housepriceinnorthernireland(pounds)": "163,877"
+   },
+   {
+    "month": "2022/02",
+    "housepriceinengland(pounds)": "295,888",
+    "housepriceinwales(pounds)": "203,136",
+    "housepriceinscotland(pounds)": "178,884",
+    "housepriceinnorthernireland(pounds)": "163,877"
+   },
+   {
+    "month": "2022/03",
+    "housepriceinengland(pounds)": "297,524",
+    "housepriceinwales(pounds)": "205,153",
+    "housepriceinscotland(pounds)": "180,314",
+    "housepriceinnorthernireland(pounds)": "163,877"
+   },
+   {
+    "month": "2022/04",
+    "housepriceinengland(pounds)": "299,249",
+    "housepriceinwales(pounds)": "209,538",
+    "housepriceinscotland(pounds)": "184,291",
+    "housepriceinnorthernireland(pounds)": "169,296"
+   },
+   {
+    "month": "2022/05",
+    "housepriceinengland(pounds)": "302,278",
+    "housepriceinwales(pounds)": "210,893",
+    "housepriceinscotland(pounds)": "187,484",
+    "housepriceinnorthernireland(pounds)": "169,296"
+   },
+   {
+    "month": "2022/06",
+    "housepriceinengland(pounds)": "304,867",
+    "housepriceinwales(pounds)": "213,608",
+    "housepriceinscotland(pounds)": "189,945",
+    "housepriceinnorthernireland(pounds)": "169,296"
+   },
+   {
+    "month": "2022/07",
+    "housepriceinengland(pounds)": "311,583",
+    "housepriceinwales(pounds)": "217,418",
+    "housepriceinscotland(pounds)": "191,989",
+    "housepriceinnorthernireland(pounds)": "176,138"
+   },
+   {
+    "month": "2022/08",
+    "housepriceinengland(pounds)": "315,965",
+    "housepriceinwales(pounds)": "218,987",
+    "housepriceinscotland(pounds)": "192,727",
+    "housepriceinnorthernireland(pounds)": "176,138"
+   },
+   {
+    "month": "2022/09",
+    "housepriceinengland(pounds)": "314,278",
+    "housepriceinwales(pounds)": "223,845",
+    "housepriceinscotland(pounds)": "192,059",
+    "housepriceinnorthernireland(pounds)": "176,138"
+   },
+   {
+    "month": "2022/10",
+    "housepriceinengland(pounds)": "316,073",
+    "housepriceinwales(pounds)": "223,143",
+    "housepriceinscotland(pounds)": "193,042",
+    "housepriceinnorthernireland(pounds)": "175,234"
+   },
+   {
+    "month": "2022/11",
+    "housepriceinengland(pounds)": "315,073",
+    "housepriceinwales(pounds)": "220,964",
+    "housepriceinscotland(pounds)": "192,859",
+    "housepriceinnorthernireland(pounds)": "175,234"
+   },
+   {
+    "month": "2022/12",
+    "housepriceinengland(pounds)": "315,119",
+    "housepriceinwales(pounds)": "222,402",
+    "housepriceinscotland(pounds)": "187,224",
+    "housepriceinnorthernireland(pounds)": "175,234"
+   },
+   {
+    "month": "2023/01",
+    "housepriceinengland(pounds)": "305,306",
+    "housepriceinwales(pounds)": "214,236",
+    "housepriceinscotland(pounds)": "182,742",
+    "housepriceinnorthernireland(pounds)": "171,689"
+   },
+   {
+    "month": "2023/02",
+    "housepriceinengland(pounds)": "303,504",
+    "housepriceinwales(pounds)": "212,728",
+    "housepriceinscotland(pounds)": "179,312",
+    "housepriceinnorthernireland(pounds)": "171,689"
+   },
+   {
+    "month": "2023/03",
+    "housepriceinengland(pounds)": "299,035",
+    "housepriceinwales(pounds)": "210,643",
+    "housepriceinscotland(pounds)": "181,112",
+    "housepriceinnorthernireland(pounds)": "171,689"
+   },
+   {
+    "month": "2023/04",
+    "housepriceinengland(pounds)": "299,329",
+    "housepriceinwales(pounds)": "206,889",
+    "housepriceinscotland(pounds)": "183,442",
+    "housepriceinnorthernireland(pounds)": "173,917"
+   },
+   {
+    "month": "2023/05",
+    "housepriceinengland(pounds)": "299,196",
+    "housepriceinwales(pounds)": "210,378",
+    "housepriceinscotland(pounds)": "188,429",
+    "housepriceinnorthernireland(pounds)": "173,917"
+   },
+   {
+    "month": "2023/06",
+    "housepriceinengland(pounds)": "301,947",
+    "housepriceinwales(pounds)": "211,195",
+    "housepriceinscotland(pounds)": "186,876",
+    "housepriceinnorthernireland(pounds)": "173,917"
+   },
+   {
+    "month": "2023/07",
+    "housepriceinengland(pounds)": "304,387",
+    "housepriceinwales(pounds)": "213,980",
+    "housepriceinscotland(pounds)": "189,522",
+    "housepriceinnorthernireland(pounds)": "179,179"
+   },
+   {
+    "month": "2023/08",
+    "housepriceinengland(pounds)": "307,482",
+    "housepriceinwales(pounds)": "215,505",
+    "housepriceinscotland(pounds)": "193,673",
+    "housepriceinnorthernireland(pounds)": "179,179"
+   },
+   {
+    "month": "2023/09",
+    "housepriceinengland(pounds)": "306,036",
+    "housepriceinwales(pounds)": "215,248",
+    "housepriceinscotland(pounds)": "190,320",
+    "housepriceinnorthernireland(pounds)": "179,179"
+   },
+   {
+    "month": "2023/10",
+    "housepriceinengland(pounds)": "305,864",
+    "housepriceinwales(pounds)": "214,494",
+    "housepriceinscotland(pounds)": "190,170",
+    "housepriceinnorthernireland(pounds)": "177,611"
+   },
+   {
+    "month": "2023/11",
+    "housepriceinengland(pounds)": "301,457",
+    "housepriceinwales(pounds)": "211,817",
+    "housepriceinscotland(pounds)": "191,988",
+    "housepriceinnorthernireland(pounds)": "177,611"
+   },
+   {
+    "month": "2023/12",
+    "housepriceinengland(pounds)": "302,164",
+    "housepriceinwales(pounds)": "213,816",
+    "housepriceinscotland(pounds)": "190,341",
+    "housepriceinnorthernireland(pounds)": "177,611"
+   },
+   {
+    "month": "2024/01",
+    "housepriceinengland(pounds)": "298,575",
+    "housepriceinwales(pounds)": "213,063",
+    "housepriceinscotland(pounds)": "187,150",
+    "housepriceinnorthernireland(pounds)": "178,000"
+   },
+   {
+    "month": "2024/02",
+    "housepriceinengland(pounds)": "298,000",
+    "housepriceinwales(pounds)": "211,000",
+    "housepriceinscotland(pounds)": "188,000",
+    "housepriceinnorthernireland(pounds)": "178,000"
+   },
+   {
+    "month": "2024/03",
+    "housepriceinengland(pounds)": "299,000",
+    "housepriceinwales(pounds)": "214,000",
+    "housepriceinscotland(pounds)": "192,000",
+    "housepriceinnorthernireland(pounds)": "178,000"
+   },
+   {
+    "month": "2024/04",
+    "housepriceinengland(pounds)": "298,000",
+    "housepriceinwales(pounds)": "216,000",
+    "housepriceinscotland(pounds)": "190,000",
+    "housepriceinnorthernireland(pounds)": "178,000"
+   },
+   {
+    "month": "2024/05",
+    "housepriceinengland(pounds)": "302,000",
+    "housepriceinwales(pounds)": "216,000",
+    "housepriceinscotland(pounds)": "191,000",
+    "housepriceinnorthernireland(pounds)": "178,000"
+   },
+   {
+    "month": "2024/06",
+    "housepriceinengland(pounds)": "305,000",
+    "housepriceinwales(pounds)": "216,000",
+    "housepriceinscotland(pounds)": "192,000",
+    "housepriceinnorthernireland(pounds)": "185,000"
+   },
+   {
+    "month": "2024/07",
+    "housepriceinengland(pounds)": "306,000",
+    "housepriceinwales(pounds)": "218,000",
+    "housepriceinscotland(pounds)": "199,000",
+    "housepriceinnorthernireland(pounds)": "185,000"
+   },
+   {
+    "month": "2024/08",
+    "housepriceinengland(pounds)": "310,000",
+    "housepriceinwales(pounds)": "223,000",
+    "housepriceinscotland(pounds)": "200,000",
+    "housepriceinnorthernireland(pounds)": "185,000"
+   },
+   {
+    "month": "2024/09",
+    "housepriceinengland(pounds)": "309,000",
+    "housepriceinwales(pounds)": "217,000",
+    "housepriceinscotland(pounds)": "198,000",
+    "housepriceinnorthernireland(pounds)": "191,000"
+   },
+   {
+    "month": "2024/10",
+    "housepriceinengland(pounds)": "309,000",
+    "housepriceinwales(pounds)": "222,000",
+    "housepriceinscotland(pounds)": "197,000",
+    "housepriceinnorthernireland(pounds)": "191,000"
+   },
+   {
+    "month": "2024/11",
+    "housepriceinengland(pounds)": "306,000",
+    "housepriceinwales(pounds)": "219,000",
+    "housepriceinscotland(pounds)": "195,000",
+    "housepriceinnorthernireland(pounds)": "191,000"
+   },
+   {
+    "month": "2024/12",
+    "housepriceinengland(pounds)": "291,000",
+    "housepriceinwales(pounds)": "208,000",
+    "housepriceinscotland(pounds)": "189,000",
+    "housepriceinnorthernireland(pounds)": "183,000"
+   },
+   {
+    "month": "2025/01",
+    "housepriceinengland(pounds)": "291,000",
+    "housepriceinwales(pounds)": "210,000",
+    "housepriceinscotland(pounds)": "187,000",
+    "housepriceinnorthernireland(pounds)": "183,000"
+   },
+   {
+    "month": "2025/02",
+    "housepriceinengland(pounds)": "292,000",
+    "housepriceinwales(pounds)": "207,000",
+    "housepriceinscotland(pounds)": "186,000",
+    "housepriceinnorthernireland(pounds)": "183,000"
+   },
+   {
+    "month": "2025/03",
+    "housepriceinengland(pounds)": "296,000",
+    "housepriceinwales(pounds)": "208,000",
+    "housepriceinscotland(pounds)": "186,000",
+    "housepriceinnorthernireland(pounds)": "185,000"
+   },
+   {
+    "month": "2025/04",
+    "housepriceinengland(pounds)": "286,000",
+    "housepriceinwales(pounds)": "210,000",
+    "housepriceinscotland(pounds)": "191,000",
+    "housepriceinnorthernireland(pounds)": "185,000"
+   }
+  ],
+  "our_scores": {
+   "normal_row_f1": 0.008,
+   "closed_row_f1": 0.858
+  }
+ },
+ "ws_en_010": {
+  "instance_id": "ws_en_010",
+  "blurb": "Every UK Area of Outstanding Natural Beauty + National Scenic Area — 602 cells; recalls founding year, body, counties, even URLs from memory",
+  "query": "Could you provide an updated list of all officially recognized Areas of Outstanding Natural Beauty (AONBs) and National Scenic Area (NSA) in the UK as of 2024? Please include the following: name of each scenic area, designation category (AONB or NSA), regions (select from England, Scotland, Wales, and Northern Ireland), designation time (the year it was designated as an AONB/NSA for the first time), responsible public body (select from Natural England, Natural Resources Wales, Northern Ireland Environment Agency, or NatureScot), counties (list all administrative counties it covers, separated by commas), and the official website.\n\nPlease organize the results in one Markdown table with the following columns:\nDesignation Category, Area Name, Regions, Designation Time, Responsible Public Body, Counties, Website\n\nDon't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown\n{data_content}\n```.",
+  "required_columns": [
+   "designationcategory",
+   "areaname",
+   "regions",
+   "designationtime",
+   "responsiblepublicbody",
+   "counties",
+   "website"
+  ],
+  "gold_rows": [
+   {
+    "designationcategory": "AONB",
+    "areaname": "Arnside and Silverdale",
+    "regions": "England",
+    "designationtime": "1972",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Lancashire, Cumbria",
+    "website": "https://www.arnsidesilverdaleaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Blackdown Hills",
+    "regions": "England",
+    "designationtime": "1991",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Devon, Somerset",
+    "website": "https://blackdownhillsaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Cannock Chase",
+    "regions": "England",
+    "designationtime": "1958",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Staffordshire",
+    "website": "https://www.cannock-chase.co.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Chichester Harbour",
+    "regions": "England",
+    "designationtime": "1964",
+    "responsiblepublicbody": "Natural England",
+    "counties": "West Sussex, Hampshire",
+    "website": "https://www.conservancy.co.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Chilterns",
+    "regions": "England",
+    "designationtime": "1965",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Bedfordshire, Buckinghamshire, Hertfordshire, Oxfordshire",
+    "website": "https://www.chilterns.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Cornwall",
+    "regions": "England",
+    "designationtime": "1959",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Cornwall",
+    "website": "https://cornwall-landscape.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Cotswolds",
+    "regions": "England",
+    "designationtime": "1966",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Gloucestershire, Oxfordshire, Wiltshire, Somerset, Worcestershire, Warwickshire",
+    "website": "https://www.cotswolds-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Cranborne Chase and West Wiltshire Downs",
+    "regions": "England",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Dorset, Hampshire, Somerset, Wiltshire",
+    "website": "https://cranbornechase.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Dedham Vale",
+    "regions": "England",
+    "designationtime": "1970",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Essex, Suffolk",
+    "website": "https://dedhamvale-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Dorset",
+    "regions": "England",
+    "designationtime": "1959",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Dorset",
+    "website": "https://dorset-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "East Devon",
+    "regions": "England",
+    "designationtime": "1963",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Devon",
+    "website": "https://eastdevon-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Forest of Bowland",
+    "regions": "England",
+    "designationtime": "1964",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Lancashire, North Yorkshire",
+    "website": "https://www.forestofbowland.com/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "High Weald",
+    "regions": "England",
+    "designationtime": "1983",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Kent, West Sussex, East Sussex, Surrey",
+    "website": "https://highweald.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Howardian Hills",
+    "regions": "England",
+    "designationtime": "1987",
+    "responsiblepublicbody": "Natural England",
+    "counties": "North Yorkshire",
+    "website": "https://www.howardianhills.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Isle of Wight",
+    "regions": "England",
+    "designationtime": "1963",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Isle of Wight",
+    "website": "https://www.wightaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Isles of Scilly",
+    "regions": "England",
+    "designationtime": "1975",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Cornwall",
+    "website": "https://islesofscilly-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Kent Downs",
+    "regions": "England",
+    "designationtime": "1968",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Kent",
+    "website": "https://kentdowns.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Lincolnshire Wolds",
+    "regions": "England",
+    "designationtime": "1973",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Lincolnshire",
+    "website": "https://www.lincswolds.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Malvern Hills",
+    "regions": "England",
+    "designationtime": "1959",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Worcestershire, Herefordshire, Gloucestershire",
+    "website": "https://www.malvernhillsaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Mendip Hills",
+    "regions": "England",
+    "designationtime": "1972",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Somerset",
+    "website": "https://www.mendiphillsaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Nidderdale",
+    "regions": "England",
+    "designationtime": "1994",
+    "responsiblepublicbody": "Natural England",
+    "counties": "North Yorkshire",
+    "website": "https://nidderdale-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Norfolk Coast",
+    "regions": "England",
+    "designationtime": "1968",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Norfolk",
+    "website": "https://norfolkcoast.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "North Devon Coast",
+    "regions": "England",
+    "designationtime": "1959",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Devon",
+    "website": "https://www.northdevoncoast-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "North Pennines",
+    "regions": "England",
+    "designationtime": "1988",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Durham, Northumberland, North Yorkshire, Cumbria",
+    "website": "https://northpennines.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Northumberland Coast",
+    "regions": "England",
+    "designationtime": "1958",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Northumberland",
+    "website": "https://www.northumberlandcoastaonb.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "North Wessex Downs",
+    "regions": "England",
+    "designationtime": "1972",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Wiltshire, Berkshire, Hampshire, Oxfordshire",
+    "website": "https://www.northwessexdowns.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Quantock Hills",
+    "regions": "England",
+    "designationtime": "1956",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Somerset",
+    "website": "https://www.quantockhills.com/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Shropshire Hills",
+    "regions": "England",
+    "designationtime": "1958",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Shropshire",
+    "website": "https://www.shropshirehills-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Solway Coast",
+    "regions": "England",
+    "designationtime": "1964",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Cumbria",
+    "website": "https://www.solwaycoast-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "South Devon",
+    "regions": "England",
+    "designationtime": "1960",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Devon",
+    "website": "https://www.southdevon-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Suffolk & Essex Coast & Heaths",
+    "regions": "England",
+    "designationtime": "1970",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Suffolk, Essex",
+    "website": "https://coastandheaths-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Surrey Hills",
+    "regions": "England",
+    "designationtime": "1958",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Surrey",
+    "website": "https://surreyhills.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Tamar Valley",
+    "regions": "England",
+    "designationtime": "1995",
+    "responsiblepublicbody": "Natural England",
+    "counties": "Cornwall, Devon",
+    "website": "https://www.tamarvalley-nl.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Anglesey/Ynys Môn",
+    "regions": "Wales",
+    "designationtime": "1967",
+    "responsiblepublicbody": "Natural Resources Wales",
+    "counties": "Anglesey",
+    "website": "https://www.anglesey.gov.wales/en/Residents/Countryside/Areas-of-Outstanding-Natural-Beauty-AONBs/Anglesey-Area-of-Outstanding-Natural-Beauty-AONB.aspx"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Clwydian Range and Dee Valley",
+    "regions": "Wales",
+    "designationtime": "1985",
+    "responsiblepublicbody": "Natural Resources Wales",
+    "counties": "Denbighshire, Flintshire, Wrexham",
+    "website": "https://www.clwydianrangeanddeevalleyaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Gower(Gŵyr)",
+    "regions": "Wales",
+    "designationtime": "1956",
+    "responsiblepublicbody": "Natural Resources Wales",
+    "counties": "Swansea",
+    "website": "https://www.swansea.gov.uk/article/9102/Gower-Area-of-Outstanding-Natural-Beauty"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Llŷn",
+    "regions": "Wales",
+    "designationtime": "1957",
+    "responsiblepublicbody": "Natural Resources Wales",
+    "counties": "Gwynedd",
+    "website": "https://www.ahne-llyn-aonb.org/Home"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Wye Valley/Dyffryn Gwy",
+    "regions": "Wales (partly in England)",
+    "designationtime": "1971",
+    "responsiblepublicbody": "Natural Resources Wales&Natural England",
+    "counties": "MonmouthshireEngland: Gloucestershire, Herefordshire",
+    "website": "https://wyevalleyaonb.org.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Antrim Coast and Glens",
+    "regions": "Northern Ireland",
+    "designationtime": "1988",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Antrim",
+    "website": "https://antrimcoastandglensaonb.ccght.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Binevenagh",
+    "regions": "Northern Ireland",
+    "designationtime": "1966",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Londonderry",
+    "website": "https://binevenaghaonb.ccght.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Causeway Coast",
+    "regions": "Northern Ireland",
+    "designationtime": "1989",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Antrim",
+    "website": "https://causewaycoastaonb.ccght.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Lagan Valley",
+    "regions": "Northern Ireland",
+    "designationtime": "1965",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Down",
+    "website": "https://www.laganvalley.co.uk/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Mourne",
+    "regions": "Northern Ireland",
+    "designationtime": "1986",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Down",
+    "website": "https://mournelive.com/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Ring of Gullion",
+    "regions": "Northern Ireland",
+    "designationtime": "1991",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Armagh",
+    "website": "https://ringofgullion.org/"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Sperrins",
+    "regions": "Northern Ireland",
+    "designationtime": "1968",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Tyrone, Londonderry",
+    "website": "https://www.daera-ni.gov.uk/articles/sperrin-area-outstanding-natural-beauty"
+   },
+   {
+    "designationcategory": "AONB",
+    "areaname": "Strangford & Lecale",
+    "regions": "Northern Ireland",
+    "designationtime": "2010",
+    "responsiblepublicbody": "Northern Ireland Environment Agency",
+    "counties": "Down",
+    "website": "https://strangfordlough.org/"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Assynt-Coigach",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Ben Nevis Glen Coe",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland, Argyll and Bute, \nPerth and Kinross",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "The Cairngorm Mountains",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland, Aberdeenshire, \nMoray",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "The Cuillin Hills",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Deeside and Lochnagar",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Aberdeenshire, Angus",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Dornoch Firth",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "East Stewartry Coast",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Dumfries and Galloway",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Eildon and Leaderfoot",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Scottish Borders",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Fleet Valley",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Dumfries and Galloway",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Glen Affric",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Glen Strathfarrar",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Hoy and West Mainland",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Orkney Islands",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Jura",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Kintail",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Knapdale",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Knoydart",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Kyle of Tongue",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Kyles of Bute",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Loch Lomond",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute, Stirling, \nWest Dunbartonshire",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Loch na Keal, Isle of Mull",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Loch Rannoch and Glen Lyon",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Perth and Kinross, Stirling",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Loch Shiel",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Loch Tummel",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Perth and Kinross",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Lynn of Lorn",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Morar, Moidart and Ardnamurchan",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Nith Estuary",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Dumfries and Galloway",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "North Arran",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "North Ayrshire",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "North-West Sutherland",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "River Earn (Comrie to St. Fillans)",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Perth and Kinross",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "River Tay (Dunkeld)",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Perth and Kinross",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Scarba, Lunga and the Garvellachs",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Argyll and Bute",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Shetland",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Shetland Islands",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "The Small Isles",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "South Uist Machair",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Western Isles",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "South Lewis, Harris and North Uist",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Western Isles",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "St. Kilda",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Western Isles",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "The Trossachs",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Stirling",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Trotternish",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Upper Tweeddale",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Scottish Borders",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   },
+   {
+    "designationcategory": "NSA",
+    "areaname": "Wester Ross",
+    "regions": "Scotland",
+    "designationtime": "1981",
+    "responsiblepublicbody": "Nature Scot",
+    "counties": "Highland",
+    "website": "https://www.nature.scot/professional-advice/protected-areas-and-species/protected-areas/national-designations/national-scenic-areas"
+   }
+  ],
+  "our_scores": {
+   "normal_row_f1": 0.148,
+   "closed_row_f1": 0.477
+  }
+ },
+ "ws_en_096": {
+  "instance_id": "ws_en_096",
+  "blurb": "Full Nikon Z-series camera spec sheet (MP, weight, fps, shutter, AF points) — recited from memory",
+  "query": "I want to buy a camera to take landscape photos. I heard that Nikon is good at taking landscapes and want to buy a mirrorless camera. Please help me collect the information of all Nikon Z series products as of the first half of 2025. The information I want to know is: effective pixels, weight, maximum frames per second, shutter speed range, highest number of focus points, digital image processor, ISO range, in-camera shock reduction technology.\nThe weight specifically refers to the weight of the camera body itself, including the battery and memory card; The highest number of focus points refers to the higher value between single-point AF and auto-area AF.\n\nPlease output the sorted data in the format of one Markdown table. The column names in the table are: Camera Model, Effective Pixels, Weight, Maximum Frames per Second, Shutter Speed Range, Highest Number of Focus Points, Digital Image Processor, ISO Range, In-camera Vibration Reduction Technology.\n\nDon't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is: \n ```markdown\n{data_content}\n```.",
+  "required_columns": [
+   "cameramodel",
+   "effectivepixels",
+   "weight",
+   "maximumframespersecond",
+   "shutterspeedrange",
+   "highestnumberoffocuspoints",
+   "digitalimageprocessor",
+   "isorange",
+   "in-cameravibrationreductiontechnology"
+  ],
+  "gold_rows": [
+   {
+    "cameramodel": "Z9",
+    "effectivepixels": " 45.71 million",
+    "weight": "1340g",
+    "maximumframespersecond": " 120 fps",
+    "shutterspeedrange": "1/32000−30s (step of 1/3, 1/2, or 1EV; extendable to 900s in M mode), bulb, remote bulb",
+    "highestnumberoffocuspoints": "493",
+    "digitalimageprocessor": "EXPEED 7 image processor",
+    "isorange": "ISO 64-25600 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z8",
+    "effectivepixels": " 45.71 million",
+    "weight": "910g",
+    "maximumframespersecond": " 120 fps",
+    "shutterspeedrange": "1/32000−30s (step of 1/3, 1/2, or 1EV; extendable to 900s in M mode), bulb, remote bulb",
+    "highestnumberoffocuspoints": "493",
+    "digitalimageprocessor": "EXPEED 7 image processor",
+    "isorange": "ISO 64-25600",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z7Ⅱ",
+    "effectivepixels": " 45.75 million",
+    "weight": "705g",
+    "maximumframespersecond": " 10 fps",
+    "shutterspeedrange": "1/8000−30s (fine-tune with 1/3 or 1/2EV; extendable to 900s in M mode), bulb, remote bulb, X200",
+    "highestnumberoffocuspoints": "493",
+    "digitalimageprocessor": "Dual EXPEED 6 digital image processors",
+    "isorange": "ISO 64-25600 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z7",
+    "effectivepixels": " 45.75 million",
+    "weight": " 675g",
+    "maximumframespersecond": " 9 fps",
+    "shutterspeedrange": "1/8000−30s (fine-tune with 1/3 or 1/2EV), bulb, remote bulb, X200",
+    "highestnumberoffocuspoints": "493",
+    "digitalimageprocessor": "EXPEED 6 digital image processor",
+    "isorange": "ISO 64-25600 ",
+    "in-cameravibrationreductiontechnology": "Image sensor 5-axis shift"
+   },
+   {
+    "cameramodel": "Z6Ⅲ",
+    "effectivepixels": " 24.50 million",
+    "weight": " 760g",
+    "maximumframespersecond": " 120 fps",
+    "shutterspeedrange": "1/8000−30s (increment of 1/3, 1/2, or 1EV; extendable to 900s in M mode), bulb, remote bulb; electronic shutter up to 1/16000s",
+    "highestnumberoffocuspoints": "299",
+    "digitalimageprocessor": "EXPEED 7 digital image processor",
+    "isorange": "ISO 100-64000 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z6Ⅱ",
+    "effectivepixels": " 24.50 million",
+    "weight": " 705g",
+    "maximumframespersecond": " 14 fps",
+    "shutterspeedrange": "1/8000−30s (fine-tune with 1/3 or 1/2EV; extendable to 900s in M mode), bulb, remote bulb, X200",
+    "highestnumberoffocuspoints": "273",
+    "digitalimageprocessor": "Dual EXPEED 6 digital image processors",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z6",
+    "effectivepixels": " 24.50 million",
+    "weight": " 675g",
+    "maximumframespersecond": " 12 fps",
+    "shutterspeedrange": "1/8000−30s (fine-tune with 1/3 or 1/2EV), bulb, remote bulb, X200",
+    "highestnumberoffocuspoints": "273",
+    "digitalimageprocessor": "EXPEED 6 image processor",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "Image sensor 5-axis shift"
+   },
+   {
+    "cameramodel": "Z5Ⅱ",
+    "effectivepixels": " 24.50 million",
+    "weight": " 700g",
+    "maximumframespersecond": " 30 fps",
+    "shutterspeedrange": "1/8000−30s (increment of 1/3EV; extendable to 900s in M mode), bulb, remote bulb",
+    "highestnumberoffocuspoints": "299",
+    "digitalimageprocessor": "EXPEED 7 image processor",
+    "isorange": "ISO 100-64000 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Z5",
+    "effectivepixels": " 24.32 million",
+    "weight": " 675g",
+    "maximumframespersecond": " 4.5 fps",
+    "shutterspeedrange": "1/8000−30s (fine-tune with 1/3 or 1/2EV), bulb, remote bulb, X200",
+    "highestnumberoffocuspoints": "273",
+    "digitalimageprocessor": "EXPEED 6 image processor",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "Image sensor 5-axis shift"
+   },
+   {
+    "cameramodel": "Zf",
+    "effectivepixels": " 24.50 million",
+    "weight": " 710g",
+    "maximumframespersecond": " 30 fps",
+    "shutterspeedrange": "1/8000−30s (increment of 1/3EV; extendable to 900s in M mode), bulb, remote bulb, X (flash sync)",
+    "highestnumberoffocuspoints": "273",
+    "digitalimageprocessor": "EXPEED 7 digital image processor",
+    "isorange": "ISO 100-64000 ",
+    "in-cameravibrationreductiontechnology": "5-axis image sensor shift"
+   },
+   {
+    "cameramodel": "Zfc",
+    "effectivepixels": " 20.88 million",
+    "weight": " 445g",
+    "maximumframespersecond": " 11 fps",
+    "shutterspeedrange": "1/4000−30s (step of 1/3; extendable to 900s in M mode), bulb, remote bulb, X (flash sync)",
+    "highestnumberoffocuspoints": "209",
+    "digitalimageprocessor": "EXPEED 6 digital image processor",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "-"
+   },
+   {
+    "cameramodel": "Z50Ⅱ",
+    "effectivepixels": " 20.90 million",
+    "weight": " 550g",
+    "maximumframespersecond": " 30 fps",
+    "shutterspeedrange": "1/4000−30s (fine-tune with 1/3, 1/2, or 1EV; extendable to 900s in M mode), bulb, remote bulb",
+    "highestnumberoffocuspoints": "231",
+    "digitalimageprocessor": "EXPEED 7 digital image processor",
+    "isorange": "ISO 100-51200",
+    "in-cameravibrationreductiontechnology": "-"
+   },
+   {
+    "cameramodel": "Z50",
+    "effectivepixels": " 20.88 million",
+    "weight": " 450g",
+    "maximumframespersecond": " 11 fps",
+    "shutterspeedrange": "1/4000−30s (fine-tune with 1/3 or 1/2EV), bulb, remote bulb",
+    "highestnumberoffocuspoints": "209",
+    "digitalimageprocessor": "EXPEED 6 digital image processor",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "-"
+   },
+   {
+    "cameramodel": "Z30",
+    "effectivepixels": " 20.88 million",
+    "weight": " 405g",
+    "maximumframespersecond": " 11 fps",
+    "shutterspeedrange": "1/4000−30s (fine-tune with 1/3EV), bulb, remote bulb",
+    "highestnumberoffocuspoints": "209",
+    "digitalimageprocessor": "EXPEED 6 digital image processor",
+    "isorange": "ISO 100-51200 ",
+    "in-cameravibrationreductiontechnology": "-"
+   }
+  ],
+  "our_scores": {
+   "normal_row_f1": 0.631,
+   "closed_row_f1": 0.667
+  }
+ },
+ "ws_en_094": {
+  "instance_id": "ws_en_094",
+  "blurb": "Top-3 South Korean box-office films per year 2010-2024 — non-English niche; recalls admissions counts",
+  "query": "I'm compiling a list of the top three box office films released in South Korea for each year from Jan 2010 to Dec 2024. Please organize the top three films each year based on cumulative box office earnings (in this context, \"box office\" refers to total cumulative gross revenue).\nFor each film, provide the release year, title, genre, director, lead actor/actress, total box office revenue (in billions of KRW, rounded to the nearest integer), and total number of admissions.\n\nPlease output the organized data in Markdown table format with the following column headers:\n  Release Year\n  Title\n  Genre\n  Director\n  Lead Actor/Actress\n  Total Box Office (billions of KRW)\n  Total Admissions\n\nDon't ask me any questions, just output the results according to the column without omitting cells arbitrarily. The output format is:\n```markdown\n{data_content}\n```.",
+  "required_columns": [
+   "releaseyear",
+   "title",
+   "genre",
+   "director",
+   "leadactor/actress",
+   "totalboxoffice(billionsofkrw)",
+   "totaladmissions"
+  ],
+  "gold_rows": [
+   {
+    "releaseyear": "2010",
+    "title": "The Man from Nowhere",
+    "genre": "Action",
+    "director": "Lee Jeong-beom",
+    "leadactor/actress": "Won Bin, Kim Sae-ron",
+    "totalboxoffice(billionsofkrw)": "47",
+    "totaladmissions": "6,282,774"
+   },
+   {
+    "releaseyear": "2010",
+    "title": "Inception",
+    "genre": "Sci-Fi Action",
+    "director": "Christopher Nolan",
+    "leadactor/actress": "Leonardo DiCaprio, Marion Cotillard, Joseph Gordon-Levitt, Elliot Page, Tom Hardy",
+    "totalboxoffice(billionsofkrw)": "43",
+    "totaladmissions": "5,872,548"
+   },
+   {
+    "releaseyear": "2010",
+    "title": "Secret Reunion",
+    "genre": "Action",
+    "director": "Jang Hoon",
+    "leadactor/actress": "Kang Dong-won, Song Kang-ho",
+    "totalboxoffice(billionsofkrw)": "40",
+    "totaladmissions": "5,507,106"
+   },
+   {
+    "releaseyear": "2011",
+    "title": "Transformers: Dark of the Moon",
+    "genre": "Sci-Fi Action",
+    "director": "Michael Bay",
+    "leadactor/actress": "Shia LaBeouf, Josh Duhamel, John Turturro, Tyrese Gibson, Rosie Huntington-Whiteley",
+    "totalboxoffice(billionsofkrw)": "74",
+    "totaladmissions": "7,790,434"
+   },
+   {
+    "releaseyear": "2011",
+    "title": "War of the Arrows",
+    "genre": "Historical Action",
+    "director": "Kim Han-min",
+    "leadactor/actress": "Park Hae-il, Moon Chae-won, Ryu Seung-ryong",
+    "totalboxoffice(billionsofkrw)": "55",
+    "totaladmissions": "7,459,974"
+   },
+   {
+    "releaseyear": "2011",
+    "title": "Sunny",
+    "genre": "Comedy",
+    "director": "Kang Hyeong-cheol",
+    "leadactor/actress": "Shim Eun-kyung, Kang So-ra, Kim Min-young, Min Hyo-rin",
+    "totalboxoffice(billionsofkrw)": "54",
+    "totaladmissions": "7,375,110"
+   },
+   {
+    "releaseyear": "2012",
+    "title": "The Thieves",
+    "genre": "Crime Action",
+    "director": "Choi Dong-hoon",
+    "leadactor/actress": "Kim Yoon-seok, Kim Hye-soo, Lee Jung-jae, Jun Ji-hyun, Simon Yam, Kim Hae-sook, Oh Dal-su, Kim Soo-hyun, Derek Tsang",
+    "totalboxoffice(billionsofkrw)": "93",
+    "totaladmissions": "12,984,701"
+   },
+   {
+    "releaseyear": "2012",
+    "title": "Masquerade",
+    "genre": "Historical",
+    "director": "Cho Chang-min",
+    "leadactor/actress": "Lee Byung-hun, Yoo Seung-ryong, Han Hyo-joo",
+    "totalboxoffice(billionsofkrw)": "87",
+    "totaladmissions": "12.128,419"
+   },
+   {
+    "releaseyear": "2012",
+    "title": "The Avengers",
+    "genre": "Sci-Fi",
+    "director": "Joss Whedon",
+    "leadactor/actress": "Robert Downey Jr., Chris Evans, Mark Ruffalo, Chris Hemsworth, Scarlett Johansson, Jeremy Renner, Tom Hiddleston, Samuel L. Jackson, Clark Gregg, Cobie Smulders",
+    "totalboxoffice(billionsofkrw)": "59",
+    "totaladmissions": "7,087,184"
+   },
+   {
+    "releaseyear": "2013",
+    "title": "Miracle in Cell No. 7",
+    "genre": "Comedy",
+    "director": "Lee Hwan-kyung",
+    "leadactor/actress": "Ryu Seung-ryong, Kal So-won, Jung Jin-young, Park Shin-hye",
+    "totalboxoffice(billionsofkrw)": "91",
+    "totaladmissions": "12,812,186"
+   },
+   {
+    "releaseyear": "2013",
+    "title": "Snowpiercer",
+    "genre": "Action Sci-Fi",
+    "director": "Bong Joon-ho",
+    "leadactor/actress": "Chris Evans, Song Kang-ho, TChris Evansn, Jamie Bell, Ed Harris",
+    "totalboxoffice(billionsofkrw)": "67",
+    "totaladmissions": "9,341,572"
+   },
+   {
+    "releaseyear": "2013",
+    "title": "The Face Reader",
+    "genre": "Historical Drama",
+    "director": "Han Jae-rim",
+    "leadactor/actress": "Song Kang-ho, Kim Hye-soo, Lee Jung-jae",
+    "totalboxoffice(billionsofkrw)": "66",
+    "totaladmissions": "9,134,586"
+   },
+   {
+    "releaseyear": "2014",
+    "title": "The Admiral: Roaring Currents",
+    "genre": "Historical War",
+    "director": "Kim Han-min",
+    "leadactor/actress": "Choi Min-sik, Ryu Seung-ryong, Cho Jin-woong, Jin Goo, Lee Jung-hyun",
+    "totalboxoffice(billionsofkrw)": "135",
+    "totaladmissions": "17,616,461"
+   },
+   {
+    "releaseyear": "2014",
+    "title": "Frozen",
+    "genre": "Animation",
+    "director": "Chris Buck, Jennifer Lee",
+    "leadactor/actress": "Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad, Santino Fontana",
+    "totalboxoffice(billionsofkrw)": "82",
+    "totaladmissions": "10,296,101"
+   },
+   {
+    "releaseyear": "2014",
+    "title": "Interstellar",
+    "genre": "Sci-Fi",
+    "director": "Christopher Nolan",
+    "leadactor/actress": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+    "totalboxoffice(billionsofkrw)": "80",
+    "totaladmissions": "10,105,249"
+   },
+   {
+    "releaseyear": "2015",
+    "title": "Veteran",
+    "genre": "Action",
+    "director": "Ryoo Seung-wan",
+    "leadactor/actress": "Hwang Jung-min, Yoo Ah-in, Yoo Hae-jin, Oh Dal-su",
+    "totalboxoffice(billionsofkrw)": "105",
+    "totaladmissions": "13,414,009"
+   },
+   {
+    "releaseyear": "2015",
+    "title": "Assassination",
+    "genre": "Action",
+    "director": "Choi Dong-hoon",
+    "leadactor/actress": "Jun Ji-hyun, Lee Jung-jae, Ha Jung-woo",
+    "totalboxoffice(billionsofkrw)": "98",
+    "totaladmissions": "12,705,700"
+   },
+   {
+    "releaseyear": "2015",
+    "title": "Avengers: Age of Ultron",
+    "genre": "Sci-Fi Adventure",
+    "director": "Joss Whedon",
+    "leadactor/actress": "Robert Downey Jr., Chris Hemsworth, Mark Ruffalo, Chris Evans, Scarlett Johansson, Jeremy Renner",
+    "totalboxoffice(billionsofkrw)": "88",
+    "totaladmissions": "10,494,499"
+   },
+   {
+    "releaseyear": "2016",
+    "title": "Train to Busan",
+    "genre": "Disaster Thriller",
+    "director": "Yeon Sang-ho",
+    "leadactor/actress": "Gong Yoo, Jung Yu-mi, Kim Su-an, Kim Eui-sung, Ma Dong-seok, Choi Woo-shik",
+    "totalboxoffice(billionsofkrw)": "93",
+    "totaladmissions": "11,565,479"
+   },
+   {
+    "releaseyear": "2016",
+    "title": "A Violent Prosecutor",
+    "genre": "Crime Comedy",
+    "director": "Lee Il-hyung",
+    "leadactor/actress": "Hwang Jung-min, Kang Dong-won",
+    "totalboxoffice(billionsofkrw)": "77",
+    "totaladmissions": "9,707,158"
+   },
+   {
+    "releaseyear": "2016",
+    "title": "Captain America: Civil War",
+    "genre": "Sci-Fi Action",
+    "director": "Anthony Russo, Joe Russo",
+    "leadactor/actress": "Chris Evans, Robert Downey Jr., Scarlett Johansson, Sebastian Stan, Anthony Mackie",
+    "totalboxoffice(billionsofkrw)": "72",
+    "totaladmissions": "8,677,249"
+   },
+   {
+    "releaseyear": "2017",
+    "title": "A Taxi Driver",
+    "genre": "Drama",
+    "director": "Jang Hoon",
+    "leadactor/actress": "Song Kang-ho, Thomas Kretschmann, Yoo Hae-jin, Ryu Jun-yeol",
+    "totalboxoffice(billionsofkrw)": "95",
+    "totaladmissions": "12,186,327"
+   },
+   {
+    "releaseyear": "2017",
+    "title": "Along with the Gods: The Two Worlds",
+    "genre": "Fantasy",
+    "director": "Kim Yong-hwa",
+    "leadactor/actress": "Ha Jung-woo, Cha Tae-hyun, Ju Ji-hoon, Kim Hyang-gi",
+    "totalboxoffice(billionsofkrw)": "68",
+    "totaladmissions": "8,539,495"
+   },
+   {
+    "releaseyear": "2017",
+    "title": "Confidential Assignment",
+    "genre": "Action",
+    "director": "Kim Sung-hoon",
+    "leadactor/actress": "Hyun Bin, Yoo Hae-jin, Kim Joo-hyuk, Im Yoon-ah, Lee Dong-hwi",
+    "totalboxoffice(billionsofkrw)": "63",
+    "totaladmissions": "7,817,446"
+   },
+   {
+    "releaseyear": "2018",
+    "title": "Along with the Gods: The Last 49 Days",
+    "genre": "Fantasy",
+    "director": "Kim Yong-hwa",
+    "leadactor/actress": "Ha Jung-woo, Ju Ji-hoon, Kim Hyang-gi, Ma Dong-seok, Kim Dong-wook, Lee Jung-jae",
+    "totalboxoffice(billionsofkrw)": "102",
+    "totaladmissions": "12,274,996"
+   },
+   {
+    "releaseyear": "2018",
+    "title": "Avengers: Infinity War",
+    "genre": "Sci-Fi Action",
+    "director": "Anthony Russo, Joe Russo",
+    "leadactor/actress": "Robert Downey Jr., Josh Brolin, Chris Evans",
+    "totalboxoffice(billionsofkrw)": "99",
+    "totaladmissions": "11,211,880"
+   },
+   {
+    "releaseyear": "2018",
+    "title": "Bohemian Rhapsody",
+    "genre": "Music Biography",
+    "director": "Bryan Singer",
+    "leadactor/actress": "Rami Malek, Lucy Boynton, Gwilym Lee, Ben Hardy ",
+    "totalboxoffice(billionsofkrw)": "80",
+    "totaladmissions": "9,224,582"
+   },
+   {
+    "releaseyear": "2019",
+    "title": "Extreme Job",
+    "genre": "Comedy",
+    "director": "Lee Byung-hun",
+    "leadactor/actress": "Ryu Seung-ryong, Lee Dong-hwi, Lee Hani, Seon-kyu Jin, Gong Myung",
+    "totalboxoffice(billionsofkrw)": "139",
+    "totaladmissions": "16,265,618"
+   },
+   {
+    "releaseyear": "2019",
+    "title": "Avengers: Endgame",
+    "genre": "Sci-Fi",
+    "director": "Anthony Russo & Joe Russo",
+    "leadactor/actress": "Robert Downey Jr., Chris Evans, Chris Hemsworth, Mark Ruffalo, Scarlett Johansson, Jeremy Renner, Paul Rudd, Brie Larson, Don Cheadle, Karen Gillan, Josh Brolin",
+    "totalboxoffice(billionsofkrw)": "122",
+    "totaladmissions": "13,934,592"
+   },
+   {
+    "releaseyear": "2019",
+    "title": "Frozen 2",
+    "genre": "Animation",
+    "director": "Chris Buck, Jennifer Lee",
+    "leadactor/actress": "Kristen Bell, Idina Menzel, Jonathan Groff, Josh Gad",
+    "totalboxoffice(billionsofkrw)": "111",
+    "totaladmissions": "13,369,064"
+   },
+   {
+    "releaseyear": "2020",
+    "title": "The Man Standing Next",
+    "genre": "Drama",
+    "director": "Woo Min-ho",
+    "leadactor/actress": "Lee Byung-hun, Lee Sung-min, Kwak Do-won, Lee Hee jun",
+    "totalboxoffice(billionsofkrw)": "41",
+    "totaladmissions": "4,750,917"
+   },
+   {
+    "releaseyear": "2020",
+    "title": "Deliver Us from Evil",
+    "genre": "Action",
+    "director": "Hong Won-chan",
+    "leadactor/actress": "Hwang Jung-min, Lee Jung-jae, Park Jung-min, Park So-yi, Choi Hee-seo",
+    "totalboxoffice(billionsofkrw)": "38",
+    "totaladmissions": "4,357,873"
+   },
+   {
+    "releaseyear": "2020",
+    "title": "Peninsula",
+    "genre": "Action Thriller",
+    "director": "Yeon Sang-ho",
+    "leadactor/actress": "Kang Dong-won, Lee Jung-hyun",
+    "totalboxoffice(billionsofkrw)": "33",
+    "totaladmissions": "3,812,954"
+   },
+   {
+    "releaseyear": "2021",
+    "title": "Spider - Man: No Way Home",
+    "genre": "Action Sci-Fi",
+    "director": "Jon Watts",
+    "leadactor/actress": "Tom Holland, Zendaya Coleman, Benedict Cumberbatch",
+    "totalboxoffice(billionsofkrw)": "55",
+    "totaladmissions": "5,560,940"
+   },
+   {
+    "releaseyear": "2021",
+    "title": "Escape from Mogadishu",
+    "genre": "Action",
+    "director": "Ryoo Seung-wan",
+    "leadactor/actress": "Kim Yoon-seok, Jo In-sung",
+    "totalboxoffice(billionsofkrw)": "34",
+    "totaladmissions": "3,613,984"
+   },
+   {
+    "releaseyear": "2021",
+    "title": "Eternals",
+    "genre": "Action Fantasy",
+    "director": "Chloé Zhao",
+    "leadactor/actress": "Gemma Chan, Richard Madden, Angelina Jolie, Salma Hayek, Kit Harington, Kumail Nanjiani, Lia McHugh, Brian Tyree Henry, Lauren Ridloff, Barry Keoghan, Ma Dong-seok",
+    "totalboxoffice(billionsofkrw)": "31",
+    "totaladmissions": "3,050,132"
+   },
+   {
+    "releaseyear": "2022",
+    "title": "The Roundup",
+    "genre": "Crime Action",
+    "director": "Lee Sang-yong",
+    "leadactor/actress": "Ma Dong-seok, Son Suk-ku",
+    "totalboxoffice(billionsofkrw)": "131",
+    "totaladmissions": "12,693,415"
+   },
+   {
+    "releaseyear": "2022",
+    "title": "Avatar: The Way of Water",
+    "genre": "Sci-Fi",
+    "director": "James Cameron",
+    "leadactor/actress": "Sam Worthington, Zoe Saldana, Sigourney Weaver",
+    "totalboxoffice(billionsofkrw)": "90",
+    "totaladmissions": "10,805,065"
+   },
+   {
+    "releaseyear": "2022",
+    "title": "Top Gun: Maverick",
+    "genre": "Action",
+    "director": "Joseph Kosinski",
+    "leadactor/actress": "Tom Cruise, Jennifer Connelly, Miles Teller, Jon Hamm, Val Kilmer",
+    "totalboxoffice(billionsofkrw)": "87",
+    "totaladmissions": "8,239,497"
+   },
+   {
+    "releaseyear": "2023",
+    "title": "12.12: The Day",
+    "genre": "Drama",
+    "director": "Kim Seong-su",
+    "leadactor/actress": "Hwang Jung-min, Jung Woo-sung, Lee Sung-min",
+    "totalboxoffice(billionsofkrw)": "118",
+    "totaladmissions": "13,128,419"
+   },
+   {
+    "releaseyear": "2023",
+    "title": "The Roundup: No Way Out",
+    "genre": "Crime Action",
+    "director": "Lee Sang-yong",
+    "leadactor/actress": "Ma Dong-seok, Lee Joon-hyuk, Takahiro Aoki",
+    "totalboxoffice(billionsofkrw)": "106",
+    "totaladmissions": "10,682,813"
+   },
+   {
+    "releaseyear": "2023",
+    "title": "Elemental",
+    "genre": "Animation",
+    "director": "Peter Sohn",
+    "leadactor/actress": "Leah Lewis, Mamoudou Athie",
+    "totalboxoffice(billionsofkrw)": "69",
+    "totaladmissions": "7,241,486"
+   },
+   {
+    "releaseyear": "2024",
+    "title": "Exhuma",
+    "genre": "Thriller",
+    "director": "Jang Jae-hyun",
+    "leadactor/actress": "Choi Min-sik, Kim Go-eun, Lee Do-hyun, Yoo Hae-jin, Seo-joon Hong",
+    "totalboxoffice(billionsofkrw)": "119",
+    "totaladmissions": "11,914,784"
+   },
+   {
+    "releaseyear": "2024",
+    "title": "The Roundup: Punishment",
+    "genre": "Crime",
+    "director": "Heo Myung-haeng",
+    "leadactor/actress": "Ma Dong-seok, Kim Moo-yeol, Lee Dong-hwi, Park Ji-hwan",
+    "totalboxoffice(billionsofkrw)": "115",
+    "totaladmissions": "11,502,928"
+   },
+   {
+    "releaseyear": "2024",
+    "title": "Inside Out 2",
+    "genre": "Fantasy Animation",
+    "director": "Kelsey Mann",
+    "leadactor/actress": "Amy Poehler, Diane Lane, Phyllis Smith, Lewis Black",
+    "totalboxoffice(billionsofkrw)": "77",
+    "totaladmissions": "8,799,611"
+   }
+  ],
+  "our_scores": {
+   "normal_row_f1": 0.454,
+   "closed_row_f1": 0.496
+  }
+ },
+ "ws_en_061": {
+  "instance_id": "ws_en_061",
+  "blurb": "Every Australian state Premier / territory Chief Minister 2015-2024 with dates, party, reason left",
+  "query": "Please compile the names of every individual who has served as a chief executive Premier (state) or Chief Minister (mainland territory) of Australia at any time between 2015-01-01 and 2024-12-31 (including 2015-01-01 and 2024-12-31).\nListing for each person: (1) Name, (2) State/Territory, (3) Office / Position (Premier / Chief Minister), (4) Party abbreviation, (5) Date first sworn in during the period, (6) Date finally left office during the period – or “incumbent” if still serving on 2024-12-31, (7) Mode of accession (general election / party leadership change / acting succession/ other), (8) Reason for leaving (election defeat / resignation / party coup / other).\n\nPlease output the organized data in the format of one Markdown table.\nThe column names are as follows:\nName, State/Territory, Office / Position, Party, Start Date, End Date, Accession Mode, Leaving Reason\nNotes:\n- The dates should be provided in the yyyy-mm-dd format, such as 2022-02-01. If they are still in office in 2024, please indicate by writing \"incumbent\", and use \"-\" for their leaving reason.\n- Please use the party abbreviation for the column Party.\n\nDon't ask me any questions, just output the results according to the columns without omitting cells arbitrarily. The output format is ```markdown\n{data_content}\n```",
+  "required_columns": [
+   "name",
+   "state/territory",
+   "office/position",
+   "party",
+   "startdate",
+   "enddate",
+   "accessionmode",
+   "leavingreason"
+  ],
+  "gold_rows": [
+   {
+    "name": "Mike Baird",
+    "state/territory": "New South Wales",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2014/4/17",
+    "enddate": "2017/1/23",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Gladys Berejiklian",
+    "state/territory": "New South Wales",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2017/1/23",
+    "enddate": "2021/10/5",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Dominic Perrottet",
+    "state/territory": "New South Wales",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2021/10/5",
+    "enddate": "2023/3/28",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Election defeat"
+   },
+   {
+    "name": "Chris Minns",
+    "state/territory": "New South Wales",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2023/3/28",
+    "enddate": "incumbent",
+    "accessionmode": "General election",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Daniel Andrews",
+    "state/territory": "Victoria",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2014/12/4",
+    "enddate": "2023/9/27",
+    "accessionmode": "General election",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Jacinta Allan",
+    "state/territory": "Victoria",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2023/9/27",
+    "enddate": "incumbent",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Campbell Newman",
+    "state/territory": "Queensland",
+    "office/position": "Premier",
+    "party": "LNP",
+    "startdate": "2012/3/26",
+    "enddate": "2015/2/14",
+    "accessionmode": "General election",
+    "leavingreason": "Election defeat "
+   },
+   {
+    "name": "Annastacia Palaszczuk",
+    "state/territory": "Queensland",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2015/2/14",
+    "enddate": "2023/12/15",
+    "accessionmode": "General election",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Steven Miles",
+    "state/territory": "Queensland",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2023/12/15",
+    "enddate": "2024-10-28",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Election defeat "
+   },
+   {
+    "name": "Jay Weatherill",
+    "state/territory": "South Australia",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2011/10/21",
+    "enddate": "2018/3/19",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Election defeat "
+   },
+   {
+    "name": "Steven Marshall",
+    "state/territory": "South Australia",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2018/3/19",
+    "enddate": "2022/3/21",
+    "accessionmode": "General election",
+    "leavingreason": "Election defeat "
+   },
+   {
+    "name": "Peter Malinauskas",
+    "state/territory": "South Australia",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2022/3/21",
+    "enddate": "incumbent",
+    "accessionmode": "General election",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Colin Barnett",
+    "state/territory": "Western Australia",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2008/9/23",
+    "enddate": "2017/3/17",
+    "accessionmode": "General election",
+    "leavingreason": "Election defeat"
+   },
+   {
+    "name": "Mark McGowan",
+    "state/territory": "Western Australia",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2017/3/17",
+    "enddate": "2023/6/8",
+    "accessionmode": "General election",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Roger Cook",
+    "state/territory": "Western Australia",
+    "office/position": "Premier",
+    "party": "ALP",
+    "startdate": "2023/6/8",
+    "enddate": "incumbent",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Will Hodgman",
+    "state/territory": "Tasmania",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2014/3/31",
+    "enddate": "2020/1/20",
+    "accessionmode": "General election",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Peter Gutwein",
+    "state/territory": "Tasmania",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2020/1/20",
+    "enddate": "2022/4/8",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Jeremy Rockliff",
+    "state/territory": "Tasmania",
+    "office/position": "Premier",
+    "party": "LIB",
+    "startdate": "2022/4/8",
+    "enddate": "incumbent",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Andrew Barr",
+    "state/territory": "Australian Capital Territory",
+    "office/position": "Chief Minister",
+    "party": "ALP",
+    "startdate": "2014/12/11",
+    "enddate": "incumbent",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "-"
+   },
+   {
+    "name": "Adam Giles",
+    "state/territory": "Northern Territory",
+    "office/position": "Chief Minister",
+    "party": "CLP",
+    "startdate": "2013/3/14",
+    "enddate": "2016/8/31",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Election defeat"
+   },
+   {
+    "name": "Michael Gunner",
+    "state/territory": "Northern Territory",
+    "office/position": "Chief Minister",
+    "party": "ALP",
+    "startdate": "2016/8/31",
+    "enddate": "2022/5/13",
+    "accessionmode": "General election",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Natasha Fyles",
+    "state/territory": "Northern Territory",
+    "office/position": "Chief Minister",
+    "party": "ALP",
+    "startdate": "2022/5/13",
+    "enddate": "2023/12/26",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Resignation"
+   },
+   {
+    "name": "Eva Lawler",
+    "state/territory": "Northern Territory",
+    "office/position": "Chief Minister",
+    "party": "ALP",
+    "startdate": "2023/12/26",
+    "enddate": "2024/8/28",
+    "accessionmode": "Party leadership change",
+    "leavingreason": "Election defeat"
+   },
+   {
+    "name": "Lia Finocchiaro",
+    "state/territory": "Northern Territory",
+    "office/position": "Chief Minister",
+    "party": "CLP",
+    "startdate": "2024/8/28",
+    "enddate": "incumbent",
+    "accessionmode": "General election",
+    "leavingreason": "-"
+   },
+   {
+    "name": "David Crisafulli",
+    "state/territory": "Queensland",
+    "office/position": "Premier",
+    "party": "LNP",
+    "startdate": "2024-10-28",
+    "enddate": "incumbent",
+    "accessionmode": "General election",
+    "leavingreason": "-"
+   }
+  ],
+  "our_scores": {
+   "normal_row_f1": 0.041,
+   "closed_row_f1": 0.846
+  }
+ }
+}
