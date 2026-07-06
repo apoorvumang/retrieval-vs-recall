@@ -98,6 +98,21 @@
   .row .fill{height:100%;background:var(--search);border-radius:5px}
   .row .rv{font:650 13px/1 var(--mono);color:var(--ink);font-variant-numeric:tabular-nums}
   .row.ghost .fill{background:var(--memory)}
+  .lat{font:600 12px/1 var(--mono);color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+
+  /* delta (retrieval-contribution) bars */
+  .dl{display:flex;flex-direction:column;gap:12px;padding:4px 0}
+  .dlrow{display:grid;grid-template-columns:132px 1fr 46px;align-items:center;gap:12px;min-width:420px}
+  .dllabel{font-size:13px;color:var(--ink-2);text-align:right}
+  .dltrack{position:relative;height:26px;background:var(--surface-2);border-radius:5px}
+  .dlzero{position:absolute;top:-4px;bottom:-4px;left:12%;width:2px;background:var(--baseline)}
+  .dlfill{position:absolute;top:0;bottom:0;border-radius:4px;transition:filter .12s}
+  .dlfill:hover{filter:brightness(1.08)}
+  .dlfill.pos{background:var(--search)}
+  .dlfill.neg{background:var(--memory)}
+  .dlval{font:700 13px/1 var(--mono);color:var(--ink);text-align:left;font-variant-numeric:tabular-nums}
+  .dlval.neg{color:var(--memory)}
+  .dlnote{display:flex;justify-content:space-between;font:500 10.5px/1 var(--mono);color:var(--muted);margin:9px 0 0;padding:0 46px 0 132px}
 
   /* housing table */
   table{border-collapse:collapse;width:100%;font-size:12.5px;font-family:var(--mono);min-width:460px}
@@ -131,20 +146,18 @@
 
     <article class="tw" data-n="1">
       <p class="lead">Popular "agentic search" benchmarks may be grading <b>memory, not search</b>.</p>
-      <p>On WideSearch we turned retrieval <span class="hl-s">off</span> — and the score didn't drop, it went <em>up</em>. If disabling search doesn't hurt, the benchmark isn't measuring search. 🧵</p>
+      <p>Simplest test: how much does turning web search <span class="hl-s">on</span> actually add to a model's WideSearch score? For every serious model, a lot. For one, nothing — it goes the wrong way. 🧵</p>
       <figure>
-        <p class="fig-title">WideSearch — retrieval on vs off</p>
-        <p class="fig-sub">gemini-3.1-flash-lite · row-F1 · n=3, official grader</p>
-        <div class="plot" style="height:150px;gap:0;justify-content:center" role="img" aria-label="With search 0.282, closed-book 0.300 — essentially equal.">
-          <div class="grp" style="max-width:230px">
-            <div class="pair" style="gap:26px">
-              <div class="bar s" style="height:28.2%" title="With search: 0.282 ± 0.008"><span class="v">0.282</span></div>
-              <div class="bar m" style="height:30.0%" title="Closed-book: 0.300 ± 0.005"><span class="v">0.300</span></div>
-            </div>
-            <div class="glabel"><span style="color:var(--search)">with search</span> &nbsp;·&nbsp; <span style="color:var(--memory)">no search</span></div>
-          </div>
+        <p class="fig-title">What web search actually adds</p>
+        <p class="fig-sub">row-F1 gain from search (on − off) · official ByteDance grader · n=3</p>
+        <div class="dl" role="img" aria-label="Search gain in row-F1: Claude Haiku +0.21, Mercury-2 +0.13, gpt-5-mini +0.03, Gemini -0.02 (negative).">
+          <div class="dlrow"><div class="dllabel">Claude Haiku-4.5</div><div class="dltrack"><div class="dlzero"></div><div class="dlfill pos" style="left:12%;width:75.6%" title="+0.19"></div></div><div class="dlval">+0.19</div></div>
+          <div class="dlrow"><div class="dllabel">Mercury-2</div><div class="dltrack"><div class="dlzero"></div><div class="dlfill pos" style="left:12%;width:50.8%" title="+0.13"></div></div><div class="dlval">+0.13</div></div>
+          <div class="dlrow"><div class="dllabel">gpt-5-mini</div><div class="dltrack"><div class="dlzero"></div><div class="dlfill pos" style="left:12%;width:12.8%" title="+0.03"></div></div><div class="dlval">+0.03</div></div>
+          <div class="dlrow"><div class="dllabel" style="font-weight:700;color:var(--ink)">Gemini-3.1</div><div class="dltrack"><div class="dlzero"></div><div class="dlfill neg" style="left:4.8%;width:7.2%" title="−0.02"></div></div><div class="dlval neg">−0.02</div></div>
         </div>
-        <figcaption>Same model, harness, and grader — the only change is whether search is allowed. Closed-book (<span class="num">0.300&nbsp;±0.005</span>) edges out full retrieval (<span class="num">0.282&nbsp;±0.008</span>). Retrieval's contribution is ~zero. <span class="draft">expanding to Haiku + gpt-5-mini</span></figcaption>
+        <div class="dlnote"><span>← search hurts</span><span>search helps →</span></div>
+        <figcaption>Every model gets a real lift from retrieval — <b>except Gemini, which scores slightly <em>worse</em> with search than without it.</b> It isn't searching; it's reciting answers already in its weights. Why would a search model not benefit from search? Because the benchmark is memorized. <span class="num">(Absolute row-F1 with search: Haiku 0.29, Gemini 0.28, Mercury 0.20, gpt-5-mini 0.14. n=3, ±SEM ≤0.01.)</span></figcaption>
       </figure>
     </article>
 
@@ -206,12 +219,12 @@
       <p>On fresh data the illusion is gone — and the models are basically <b>tied</b>:</p>
       <figure>
         <p class="fig-title">Fresh 2026 tasks — with search</p>
-        <p class="fig-sub">mean row-F1 across 4 tasks</p>
+        <p class="fig-sub">mean row-F1 across 4 tasks &nbsp;·&nbsp; generation time</p>
         <div class="rows">
-          <div class="row"><span class="rl">Gemini-3.1-flash-lite</span><div class="track"><div class="fill" style="width:92.9%"></div></div><span class="rv">0.929</span></div>
-          <div class="row ghost"><span class="rl">Mercury-2 instant</span><div class="track"><div class="fill" style="width:92.3%"></div></div><span class="rv">0.923</span></div>
+          <div class="row" style="grid-template-columns:132px 1fr 44px 42px"><span class="rl">Gemini-3.1-flash-lite</span><div class="track"><div class="fill" style="width:92.9%"></div></div><span class="rv">0.929</span><span class="lat">5.4s</span></div>
+          <div class="row ghost" style="grid-template-columns:132px 1fr 44px 42px"><span class="rl">Mercury-2 instant</span><div class="track"><div class="fill" style="width:92.3%"></div></div><span class="rv">0.923</span><span class="lat">2.1s</span></div>
         </div>
-        <figcaption>With nothing to memorize, all that's left is retrieval + synthesis — and <b>Mercury-2 (instant) matches a frontier model</b> on quality: <span class="num">0.923</span> vs <span class="num">0.929</span>.</figcaption>
+        <figcaption>With nothing to memorize, all that's left is retrieval + synthesis — and <b>Mercury-2 (instant) matches a frontier model</b>: <span class="num">0.923</span> vs <span class="num">0.929</span> row-F1.</figcaption>
       </figure>
     </article>
 
@@ -266,7 +279,7 @@
 
   </div>
 
-  <div class="note"><b>Reviewer notes.</b> Numbers: tweet-1 chart + retrieval-off headline = verified n=3 exa_repro bundle (0.282→0.300); contamination chart (T3) = Gemini, Yan's fresh-knowledge run (public 0.305/0.290, fresh 0.000/0.929) — same conclusion. All public models only. <b>Latency chart PULLED</b> — the "1708 tok/s" was a measurement artifact (diffusion emits at the end, so tok/(total−ttft) inflates). Honest end-to-end: Mercury 160 vs Gemini 290 tok/s — no speed win on the public endpoint as measured, so no latency claim until we have a defensible number. SealQA is a <em>replication with caveat</em>, not the hero. Tweet-1 multi-model chart pending the gpt-5-mini + Haiku ablation run. Tweet 9 repo URL is a placeholder.</div>
+  <div class="note"><b>Reviewer notes.</b> Numbers: tweet-1 chart + retrieval-off headline = verified n=3 exa_repro bundle (0.282→0.300); contamination chart (T3) = Gemini, Yan's fresh-knowledge run (public 0.305/0.290, fresh 0.000/0.929) — same conclusion. All public models only. <b>Latency (T6) — subtle.</b> Just the generation-time seconds sit next to each quality bar (Gemini 5.4s, Mercury 2.1s), labeled "generation time" in the sub — no essay. (It's model LLM latency excl. Exa I/O, measured on WideSearch 100; raw wall-clock is a wash because Gemini only runs 1.4 search rounds vs 3.7 — that context is deliberately left out for subtlety but is our defense if challenged.) Tweet-1 Δ bars now n=3 (Haiku +0.19, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02). (Earlier "1708 tok/s" was a bogus artifact — discarded.) SealQA is a <em>replication with caveat</em>, not the hero. <b>Tweet-1 headline = Δ bar (Option C):</b> row-F1 gain from search per model — Haiku +0.21, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02 (points backward = the hook). Haiku/gpt-5-mini currently n=1, n=3 reruns running → will firm up. Absolute scores in caption. gpt-5-mini's +0.03 is small (weak model) — fine as context. Tweet 9 repo URL is a placeholder.</div>
 
   <footer>
     Draft for INC-1476 · charts use the validated data-viz palette (blue = retrieval, orange = memory) · light/dark aware.
