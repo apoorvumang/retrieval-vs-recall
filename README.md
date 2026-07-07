@@ -53,10 +53,11 @@ on fresh data closed-book collapses to zero and search carries the whole score:
 
 ## It's not just WideSearch — SealQA
 
-On SealQA (LongSeal; contamination-resistant, refreshed ~monthly), Gemini scores
-*higher* from memory than from the retrieved documents, and the gap is widest on
-older facts — the same memorization signature. (SealQA's docs are adversarially
-noisy by design, so treat this as a replication of the pattern, not the clean proof.)
+Same signature on SealQA (LongSeal; contamination-resistant, refreshed ~monthly).
+Answering from memory, Gemini's lead lives entirely in **pre-2024** questions — the
+ones old enough to be in its weights. Cross into post-cutoff **2026** and the ranking
+flips: Mercury leads. Same context for both models; the only thing that changed is
+whether memory could answer. (2026 is n=48 — an edge, not a blowout.)
 
 ![SealQA by answer era](figures/sealqa_temporal.png)
 

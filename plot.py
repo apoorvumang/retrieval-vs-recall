@@ -110,14 +110,40 @@ def fig_contamination():
 
 
 def fig_sealqa():
-    fig, ax = plt.subplots(figsize=(8, 4.2), dpi=150)
-    _grouped(ax,
-             ["before 2024", "2024", "2025", "2026", "overall"],
-             [("With docs (open-book)", [0.233, 0.185, 0.020, 0.062, 0.154], SEARCH),
-              ("Closed-book (memory)", [0.313, 0.272, 0.080, 0.104, 0.223], MEMORY)],
-             "SealQA (LongSeal) — Gemini, by answer era",
-             "accuracy, mean of n=3 · closed-book ≥ with-docs everywhere",
-             ymax=0.36)
+    """Gemini vs Mercury answering from memory (closed-book), by answer era.
+    Gemini's lead is all in pre-cutoff eras; on 2026 the ranking flips."""
+    eras = ["before 2024", "2024", "2025", "2026"]
+    nq = [129, 27, 50, 48]
+    gem = [0.313, 0.272, 0.080, 0.104]
+    gem_sd = [0.004, 0.021, 0.000, 0.000]
+    m2 = [0.222, 0.086, 0.047, 0.153]
+    m2_sd = [0.012, 0.021, 0.012, 0.048]
+    GEM_C = "#5b6573"   # slate (incumbent)
+    M2_C = SEARCH       # blue (ours)
+    fig, ax = plt.subplots(figsize=(8, 4.4), dpi=150)
+    x = list(range(4))
+    w = 0.38
+    ax.axvspan(2.5, 3.5, color="#fff3ea", zorder=0)  # highlight 2026
+    ekw = dict(ecolor="#0000004d", lw=1.1, capsize=3)
+    ax.bar([i - w / 2 for i in x], gem, w, yerr=gem_sd, error_kw=ekw,
+           label="Gemini-3.1-flash-lite", color=GEM_C, zorder=3)
+    ax.bar([i + w / 2 for i in x], m2, w, yerr=m2_sd, error_kw=ekw,
+           label="Mercury-2", color=M2_C, zorder=3)
+    ax.set_xticks(x)
+    ax.set_xticklabels([f"{e}\n(n={n})" for e, n in zip(eras, nq)])
+    ax.set_ylim(0, 0.38)
+    ax.set_ylabel("accuracy (closed-book / memory)")
+    ax.yaxis.grid(True, color=GRID, lw=0.8, zorder=0)
+    ax.set_axisbelow(True)
+    _clean(ax)
+    ax.annotate("ranking flips —\nMercury leads", xy=(3.19, 0.16), xytext=(2.1, 0.30),
+                fontsize=10, color=M2_C, fontweight="bold", ha="center", va="center",
+                arrowprops=dict(arrowstyle="->", color=M2_C, lw=1.4))
+    ax.legend(frameon=False, loc="upper right", fontsize=10)
+    ax.set_title("SealQA — answering from memory (closed-book)",
+                 fontsize=14, fontweight="bold", loc="left", pad=24)
+    ax.text(0, 1.06, "Gemini's lead is all in pre-2024 answers; cross into post-cutoff 2026 and it flips.",
+            transform=ax.transAxes, fontsize=10.5, color=MUTED)
     fig.tight_layout()
     fig.savefig(f"{FIG}/sealqa_temporal.png", bbox_inches="tight")
     plt.close(fig)
