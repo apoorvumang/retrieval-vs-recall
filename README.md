@@ -68,8 +68,11 @@ reproduce.py            # recompute the headline table from committed grades
 plot.py                 # render figures/*.png from the measured numbers
 figures/                # the charts embedded above
 data/
-  gemcmp-{normal,closedbook}-r{1,2,3}.jsonl   # official grades, n=3 each → the table
-  examples.json         # 5 curated cases (incl. ws_en_034) with gold + both answers
+  gemcmp-{normal,closedbook}-r{1,2,3}.jsonl   # WideSearch retrieval-off grades, n=3
+  examples.json                # 5 curated cases (incl. ws_en_034) with gold + both answers
+  widesearch_by_model.csv      # per-model search vs closed-book row-F1 (the Δ chart)
+  fresh2026/                   # 4 post-cutoff tasks + gold, per-model outputs, results
+  sealqa/                      # LongSeal raw runs (n=3) + by-era table + breakdown.py
 lib/
   deep_widesearch_standalone.py   # the harness: planner -> Exa search -> synthesis, with --closed-book
   official_grade.py     # official ByteDance evaluate_single_query, judge = gemini-2.5-flash
@@ -118,6 +121,6 @@ or `gpt-5-mini` (OpenAI).
 
 - [x] WideSearch retrieval-off ablation (this release)
 - [x] Live BYO-keys harness (`lib/deep_widesearch_standalone.py`, `--closed-book` toggle)
-- [ ] Fresh-2026 task set (post-cutoff events) — closed-book 0.000 → with-search 0.929
-- [ ] Multi-model ablation (does every model memorize, or just some?)
-- [ ] SealQA (LongSeal) temporal replication
+- [x] Fresh-2026 task set (post-cutoff events) — `data/fresh2026/`
+- [x] Multi-model ablation (`data/widesearch_by_model.csv`)
+- [x] SealQA (LongSeal) temporal replication — `data/sealqa/`

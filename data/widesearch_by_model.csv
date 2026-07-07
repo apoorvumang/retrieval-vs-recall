@@ -1,0 +1,5 @@
+model,search_f1,closed_f1,n_runs
+claude-haiku-4-5,0.286,0.097,3
+mercury-2,0.195,0.068,3
+gpt-5-mini,0.140,0.108,3
+gemini-3.1-flash-lite,0.282,0.300,3

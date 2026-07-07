@@ -1,0 +1,24 @@
+{
+  "_note": "Fresh-2026 WideSearch tasks (4 tasks, all events after model training cutoffs). Official ByteDance grader, gemini-2.5-flash judge; deep_staged_v2 harness, cap4; built 2026-06-30. Tasks + gold in tasks.jsonl; per-model outputs in side_by_side.json.",
+  "contamination_gemini_row_f1": {
+    "public_closed_book": 0.305,
+    "public_with_search": 0.290,
+    "fresh_closed_book": 0.000,
+    "fresh_with_search": 0.929
+  },
+  "fresh_with_search_row_f1": {
+    "gemini-3.1-flash-lite": 0.929,
+    "mercury-2-instant": 0.923,
+    "mercury-2-medium": 0.903
+  },
+  "fresh_closed_book_row_f1": {
+    "gemini-3.1-flash-lite": 0.000,
+    "mercury-2-instant": 0.000
+  },
+  "fresh_with_search_per_task_row_f1": {
+    "french_open":  {"gold_rows": 5,  "gemini": 1.000, "m2_instant": 1.000},
+    "wc_red_cards": {"gold_rows": 10, "gemini": 0.842, "m2_instant": 0.947},
+    "eurovision":   {"gold_rows": 25, "gemini": 1.000, "m2_instant": 0.920},
+    "cannes":       {"gold_rows": 9,  "gemini": 0.875, "m2_instant": 0.824}
+  }
+}

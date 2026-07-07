@@ -9,13 +9,22 @@ Numbers are the measured results (official ByteDance grader, gemini-2.5-flash ju
 - contamination check: Gemini, public WideSearch vs fresh-2026 tasks, closed-book vs with-search.
 - SealQA (LongSeal): accuracy by answer era, docs-given vs closed-book, mean of n=3.
 """
+import csv
+import json
 import os
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 
-FIG = os.path.join(os.path.dirname(__file__), "figures")
+HERE = os.path.dirname(__file__)
+FIG = os.path.join(HERE, "figures")
+DATA = os.path.join(HERE, "data")
 os.makedirs(FIG, exist_ok=True)
+
+
+def _csv(rel):
+    with open(os.path.join(DATA, rel)) as f:
+        return list(csv.DictReader(f))
 
 SEARCH = "#2a78d6"   # retrieval
 MEMORY = "#eb6834"   # parametric recall
@@ -44,8 +53,11 @@ def _clean(ax):
 
 def fig_delta():
     """Headline: row-F1 gain from search (on - off), per model."""
-    models = ["Claude Haiku-4.5", "Mercury-2", "gpt-5-mini", "Gemini-3.1-flash-lite"]
-    delta = [0.189, 0.127, 0.032, -0.018]
+    disp = {"claude-haiku-4-5": "Claude Haiku-4.5", "mercury-2": "Mercury-2",
+            "gpt-5-mini": "gpt-5-mini", "gemini-3.1-flash-lite": "Gemini-3.1-flash-lite"}
+    rows = _csv("widesearch_by_model.csv")
+    models = [disp.get(r["model"], r["model"]) for r in rows]
+    delta = [round(float(r["search_f1"]) - float(r["closed_f1"]), 3) for r in rows]
     fig, ax = plt.subplots(figsize=(8, 3.4), dpi=150)
     y = range(len(models))
     colors = [SEARCH if d >= 0 else MEMORY for d in delta]
@@ -97,11 +109,12 @@ def _grouped(ax, groups, series, title, sub, ymax=1.0):
 
 
 def fig_contamination():
+    c = json.load(open(os.path.join(DATA, "fresh2026", "results.json")))["contamination_gemini_row_f1"]
     fig, ax = plt.subplots(figsize=(7.5, 4.2), dpi=150)
     _grouped(ax,
              ["Public WideSearch\n(facts in training data)", "Fresh 2026 tasks\n(after cutoff)"],
-             [("With search", [0.290, 0.929], SEARCH),
-              ("Closed-book (memory)", [0.305, 0.000], MEMORY)],
+             [("With search", [c["public_with_search"], c["fresh_with_search"]], SEARCH),
+              ("Closed-book (memory)", [c["public_closed_book"], c["fresh_closed_book"]], MEMORY)],
              "Gemini-3.1: search on vs off",
              "row-F1 · WideSearch official grader")
     fig.tight_layout()
@@ -112,12 +125,13 @@ def fig_contamination():
 def fig_sealqa():
     """Gemini vs Mercury answering from memory (closed-book), by answer era.
     Gemini's lead is all in pre-cutoff eras; on 2026 the ranking flips."""
-    eras = ["before 2024", "2024", "2025", "2026"]
-    nq = [129, 27, 50, 48]
-    gem = [0.313, 0.272, 0.080, 0.104]
-    gem_sd = [0.004, 0.021, 0.000, 0.000]
-    m2 = [0.222, 0.086, 0.047, 0.153]
-    m2_sd = [0.012, 0.021, 0.012, 0.048]
+    rows = _csv("sealqa/by_era.csv")
+    eras = [r["effective_year"] for r in rows]
+    nq = [int(r["n"]) for r in rows]
+    gem = [float(r["gemini_search_off"]) for r in rows]
+    gem_sd = [float(r["gemini_search_off_sd"]) for r in rows]
+    m2 = [float(r["m2_search_off"]) for r in rows]
+    m2_sd = [float(r["m2_search_off_sd"]) for r in rows]
     GEM_C = "#5b6573"   # slate (incumbent)
     M2_C = SEARCH       # blue (ours)
     fig, ax = plt.subplots(figsize=(8, 4.4), dpi=150)

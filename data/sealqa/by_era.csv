@@ -1,0 +1,5 @@
+effective_year,n,gemini_search_on,gemini_search_on_sd,gemini_search_off,gemini_search_off_sd,m2_search_on,m2_search_on_sd,m2_search_off,m2_search_off_sd
+before 2024,129,0.233,0.000,0.313,0.004,0.258,0.012,0.222,0.012
+2024,27,0.185,0.000,0.272,0.021,0.148,0.064,0.086,0.021
+2025,50,0.020,0.000,0.080,0.000,0.053,0.012,0.047,0.012
+2026,48,0.062,0.000,0.104,0.000,0.097,0.012,0.153,0.048
