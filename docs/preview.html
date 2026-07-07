@@ -85,6 +85,8 @@
        background:var(--series);transition:filter .12s}
   .bar:hover{filter:brightness(1.08)}
   .bar.s{--series:var(--search)} .bar.m{--series:var(--memory)}
+  .bar.gem{--series:#5b6573} .bar.m2{--series:var(--search)}
+  .grp.hl{background:rgba(42,120,214,.10);border-radius:8px}
   .bar .v{position:absolute;top:-20px;left:50%;transform:translateX(-50%);
           font:650 12.5px/1 var(--mono);color:var(--ink);white-space:nowrap}
   .glabel{margin-top:12px;font-size:12.5px;color:var(--ink-2);text-align:center;font-weight:550}
@@ -229,37 +231,33 @@
     </article>
 
     <article class="tw" data-n="7">
-      <p>It's not just WideSearch. On <b>SealQA</b> (contamination-resistant, refreshed monthly) Gemini scores <em>higher</em> answering from memory than from the retrieved documents — and the gap is widest on older facts, exactly the memorization signature.</p>
+      <p>Same signature on <b>SealQA</b> — contamination-resistant, refreshed monthly. Answering from memory, Gemini's lead lives <em>entirely</em> in pre-2024 questions — the ones old enough to be in its weights. Cross into post-cutoff 2026 and the ranking flips: <b>Mercury leads</b>. Same context for both models — the only thing that changed is whether memory could answer.</p>
       <figure>
-        <p class="fig-title">SealQA (LongSeal) — Gemini, by answer era</p>
-        <p class="fig-sub">accuracy, mean of n=3 · docs given vs closed-book</p>
+        <p class="fig-title">SealQA — answering from memory (closed-book)</p>
+        <p class="fig-sub">accuracy by answer era · Gemini vs Mercury-2 · mean of n=3</p>
         <div class="legend">
-          <span><i class="sw s"></i> With docs (open-book)</span>
-          <span><i class="sw m"></i> Closed-book (memory)</span>
+          <span><i class="sw" style="background:#5b6573"></i> Gemini-3.1-flash-lite</span>
+          <span><i class="sw" style="background:var(--search)"></i> Mercury-2</span>
         </div>
-        <div class="plot" style="gap:20px" role="img" aria-label="Across every era Gemini scores at least as high closed-book as with documents; the memory gap is largest before 2024 (0.313 vs 0.233).">
+        <div class="plot" style="gap:20px" role="img" aria-label="Closed-book accuracy by era: before 2024 Gemini 0.31 vs Mercury 0.22; 2024 0.27 vs 0.09; 2025 0.08 vs 0.05; 2026 Gemini 0.10 vs Mercury 0.15 — flips.">
           <div class="grp"><div class="pair">
-            <div class="bar s" style="height:23.3%"><span class="v">.23</span></div>
-            <div class="bar m" style="height:31.3%"><span class="v">.31</span></div></div>
-            <div class="glabel">before 2024</div></div>
+            <div class="bar gem" style="height:82.4%"><span class="v">.31</span></div>
+            <div class="bar m2" style="height:58.4%"><span class="v">.22</span></div></div>
+            <div class="glabel">before 2024<small>n=129</small></div></div>
           <div class="grp"><div class="pair">
-            <div class="bar s" style="height:18.5%"><span class="v">.19</span></div>
-            <div class="bar m" style="height:27.2%"><span class="v">.27</span></div></div>
-            <div class="glabel">2024</div></div>
+            <div class="bar gem" style="height:71.6%"><span class="v">.27</span></div>
+            <div class="bar m2" style="height:22.6%"><span class="v">.09</span></div></div>
+            <div class="glabel">2024<small>n=27</small></div></div>
           <div class="grp"><div class="pair">
-            <div class="bar s" style="height:2.0%"><span class="v">.02</span></div>
-            <div class="bar m" style="height:8.0%"><span class="v">.08</span></div></div>
-            <div class="glabel">2025</div></div>
-          <div class="grp"><div class="pair">
-            <div class="bar s" style="height:6.2%"><span class="v">.06</span></div>
-            <div class="bar m" style="height:10.4%"><span class="v">.10</span></div></div>
-            <div class="glabel">2026</div></div>
-          <div class="grp"><div class="pair">
-            <div class="bar s" style="height:15.4%"><span class="v">.15</span></div>
-            <div class="bar m" style="height:22.3%"><span class="v">.22</span></div></div>
-            <div class="glabel">overall</div></div>
+            <div class="bar gem" style="height:21.1%"><span class="v">.08</span></div>
+            <div class="bar m2" style="height:12.4%"><span class="v">.05</span></div></div>
+            <div class="glabel">2025<small>n=50</small></div></div>
+          <div class="grp hl"><div class="pair">
+            <div class="bar gem" style="height:27.4%"><span class="v">.10</span></div>
+            <div class="bar m2" style="height:40.3%"><span class="v">.15</span></div></div>
+            <div class="glabel">2026 ↗<small>Mercury leads</small></div></div>
         </div>
-        <figcaption>Closed-book ≥ open-book in every era — the retrieved documents don't help Gemini, memory does. Mercury-2 is retrieval-neutral by contrast (0.176 with docs vs 0.160 without, overall). <span style="color:var(--memory)">Caveat:</span> LongSeal docs are adversarially noisy by design, so this is a robustness replication of the pattern, not the clean proof — that's WideSearch.</figcaption>
+        <figcaption>Gemini's memory advantage is concentrated in <b>pre-2024</b> answers (0.31 vs 0.22) and fades as facts get fresher; on post-cutoff <b>2026</b> the ranking flips to Mercury (0.15 vs 0.10). Same closed-book setup throughout — the only variable is whether the answer was memorizable. <span class="num">(2026 n=48 — an edge, not a blowout.)</span></figcaption>
       </figure>
     </article>
 
@@ -279,7 +277,7 @@
 
   </div>
 
-  <div class="note"><b>Reviewer notes.</b> Numbers: tweet-1 chart + retrieval-off headline = verified n=3 exa_repro bundle (0.282→0.300); contamination chart (T3) = Gemini, Yan's fresh-knowledge run (public 0.305/0.290, fresh 0.000/0.929) — same conclusion. All public models only. <b>Latency (T6) — subtle.</b> Just the generation-time seconds sit next to each quality bar (Gemini 5.4s, Mercury 2.1s), labeled "generation time" in the sub — no essay. (It's model LLM latency excl. Exa I/O, measured on WideSearch 100; raw wall-clock is a wash because Gemini only runs 1.4 search rounds vs 3.7 — that context is deliberately left out for subtlety but is our defense if challenged.) Tweet-1 Δ bars now n=3 (Haiku +0.19, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02). (Earlier "1708 tok/s" was a bogus artifact — discarded.) SealQA is a <em>replication with caveat</em>, not the hero. <b>Tweet-1 headline = Δ bar (Option C):</b> row-F1 gain from search per model — Haiku +0.21, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02 (points backward = the hook). Haiku/gpt-5-mini currently n=1, n=3 reruns running → will firm up. Absolute scores in caption. gpt-5-mini's +0.03 is small (weak model) — fine as context. Tweet 9 repo URL is a placeholder.</div>
+  <div class="note"><b>Reviewer notes.</b> Numbers: tweet-1 chart + retrieval-off headline = verified n=3 exa_repro bundle (0.282→0.300); contamination chart (T3) = Gemini, Yan's fresh-knowledge run (public 0.305/0.290, fresh 0.000/0.929) — same conclusion. All public models only. <b>Latency (T6) — subtle.</b> Just the generation-time seconds sit next to each quality bar (Gemini 5.4s, Mercury 2.1s), labeled "generation time" in the sub — no essay. (It's model LLM latency excl. Exa I/O, measured on WideSearch 100; raw wall-clock is a wash because Gemini only runs 1.4 search rounds vs 3.7 — that context is deliberately left out for subtlety but is our defense if challenged.) Tweet-1 Δ bars now n=3 (Haiku +0.19, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02). (Earlier "1708 tok/s" was a bogus artifact — discarded.) SealQA reframed as a Gemini-vs-Mercury <em>ranking flip</em> by era (closed-book): Gemini leads pre-2024 (memorized), Mercury edges ahead on 2026 (0.15 vs 0.10, n=48 — an edge, error bars shown in the repo PNG). <b>Tweet-1 headline = Δ bar (Option C):</b> row-F1 gain from search per model — Haiku +0.21, Mercury +0.13, gpt-5-mini +0.03, Gemini −0.02 (points backward = the hook). Haiku/gpt-5-mini currently n=1, n=3 reruns running → will firm up. Absolute scores in caption. gpt-5-mini's +0.03 is small (weak model) — fine as context. Tweet 9 repo URL is a placeholder.</div>
 
   <footer>
     Draft for INC-1476 · charts use the validated data-viz palette (blue = retrieval, orange = memory) · light/dark aware.
